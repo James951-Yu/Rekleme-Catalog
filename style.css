@@ -141,6 +141,10 @@ nav .nav_part-1 a:hover::after {
     background-color: green;
 }
 
+#catalog-page a {
+    color: #000;
+}
+
 #call-icon,
 #menu,
 #menu-1 {
