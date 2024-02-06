@@ -296,7 +296,7 @@ nav .nav_part-2 button:not(#constructor) {
     text-decoration: none;
 }
 
-@media (max-width:1024px) {
+@media (max-width:1366px) {
     .breadcrumb {
         padding: 90px 40px 0 40px;
     }
