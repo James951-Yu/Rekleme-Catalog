@@ -735,7 +735,7 @@ form select {
 }
 
 @media (max-width:430px) {
-    section {
+    .designing-process {
         padding: 0 10px;
     }
 
@@ -796,7 +796,7 @@ form select {
 
     #button-up,
     #button-down {
-        left: 43px;
+        left: 55px;
         padding: 7px;
     }
 
