@@ -166,6 +166,7 @@ nav .nav_part-2 button:not(#constructor) {
 
 @media(max-width:1366px) {
     nav {
+        max-width: 1280px;
         padding: 0 40px;
     }
 
@@ -177,6 +178,7 @@ nav .nav_part-2 button:not(#constructor) {
 
 @media(max-width:768px) {
     nav {
+        padding: 0 34px;
         justify-content: space-between;
     }
 
@@ -263,7 +265,7 @@ nav .nav_part-2 button:not(#constructor) {
 }
 
 .breadcrumb {
-    padding: 0 .5rem;
+    padding: 30px 83px;
 }
 
 .breadcrumb ul {
@@ -274,12 +276,34 @@ nav .nav_part-2 button:not(#constructor) {
     padding: 0;
 }
 
-.breadcrumb li:not(:last-child)::after {
+.breadcrumb li:not(:nth-child(2)):after {
     display: inline-block;
     margin: 0 .25rem;
-    content: "→";
+    content: "/";
 }
 
+.breadcrumb li a {
+    color: #000;
+    text-decoration: none;
+}
+
+@media (max-width:1024px) {
+    .breadcrumb {
+        padding: 30px 40px;
+    }
+}
+
+@media (max-width:768px) {
+    .breadcrumb {
+        padding: 20px 34px;
+    }
+}
+
+@media (max-width:430px) {
+    .breadcrumb {
+        padding: 20px 20px;
+    }
+}
 
 /* Catalog */
 .designing-process {
