@@ -7,7 +7,8 @@
 @font-face {
     font-family: 'Inter';
     src: url(fonts/Inter-Bold.ttf);
-    font-weight: 600;
+    font-weight: 500;
+
 }
 
 @font-face {
@@ -19,7 +20,7 @@
 @font-face {
     font-family: 'NotoSans';
     src: url(fonts/NotoSans_Condensed-Bold.ttf);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 :root {
@@ -52,10 +53,16 @@
 }
 
 
+.main-title {
+    font-size: 36px;
+    font-weight: 500;
+    font-family: 'Inter', 'NotoSans';
+    line-height: 40px;
+    text-align: left;
+}
 
 .secondary-title {
-
-    font-family: Inter;
+    font-family: 'Inter', 'NotoSans';
     font-size: 24px;
     font-weight: 500;
     line-height: 32px;
@@ -65,13 +72,27 @@
 }
 
 p {
-    font-family: Inter;
+    font-family: 'Inter', 'NotoSans';
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0em;
     text-align: left;
 
+}
+
+@media(max-width:768px) {
+    .main-title {
+        font-size: 30px;
+    }
+
+    .secondary-title {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 12px;
+    }
 }
 
 .header {
@@ -91,7 +112,7 @@ p {
 nav {
     position: sticky;
     top: 0px;
-    height: 80px;
+    padding: 10px 0;
     z-index: 100;
     display: flex;
     align-items: center;
@@ -114,11 +135,11 @@ nav .nav_part-1 .fa-bars {
 
 nav .nav_part-1 a {
 
-    align-self: center;
-    font-family: Inter;
+
+    font-family: 'Inter', 'NotoSans';
     font-size: 14px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 20px;
     color: darkgray;
     text-decoration: none;
@@ -208,7 +229,7 @@ nav .nav_part-2 button:not(#constructor) {
     .sidebar a {
         text-decoration: none;
         color: #fff;
-        font-family: 'Inter' 'NotoSans';
+        font-family: 'Inter', 'NotoSans';
         line-height: 50px;
         font-size: 18px;
     }
@@ -294,6 +315,9 @@ nav .nav_part-2 button:not(#constructor) {
 .breadcrumb li a {
     color: #000;
     text-decoration: none;
+    font-size: 18px;
+    font-family: 'Inter', 'NotoSans';
+    font-weight: 400;
 }
 
 @media (max-width:1366px) {
@@ -305,6 +329,10 @@ nav .nav_part-2 button:not(#constructor) {
 @media (max-width:768px) {
     .breadcrumb {
         padding: 120px 34px 0 34px;
+    }
+
+    .breadcrumb li a {
+        font-size: 15px;
     }
 }
 
@@ -357,7 +385,7 @@ nav .nav_part-2 button:not(#constructor) {
     background-color: rgb(255 166 48);
     padding: 5px 10px;
     color: #fff;
-    font-family: Inter, NotoSans;
+    font-family: 'Inter', 'NotoSans';
     font-weight: 200;
     font-size: 12px;
 }
@@ -438,7 +466,8 @@ nav .nav_part-2 button:not(#constructor) {
 
 .container .button-desc-file h2 {
 
-    font-family: Inter;
+
+    font-family: 'Inter', 'NotoSans';
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0em;
@@ -491,6 +520,8 @@ nav .nav_part-2 button:not(#constructor) {
 
 .measure-details-1 .measure h3 {
     color: rgba(216, 123, 0, 1);
+    font-weight: 500;
+    font-family: 'Inter', 'NotoSans';
     text-align: left;
 }
 
@@ -571,6 +602,7 @@ form select {
     text-align: left;
     outline: none;
     font-size: 15px;
+    font-family: 'Inter', 'NotoSans';
     height: fit-content;
     background-image: url(images/caret-down.png);
     background-size: 15px;
@@ -655,7 +687,8 @@ form select {
 }
 
 .price-row .price-col h5 {
-    font-family: Inter;
+
+    font-family: 'Inter', 'NotoSans';
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
@@ -884,7 +917,6 @@ form select {
     flex-wrap: wrap;
     gap: 20px;
     max-width: 960px;
-    overflow-x: scroll;
     padding-bottom: 15px;
 }
 
@@ -937,7 +969,8 @@ form select {
     border-radius: 14px;
     gap: 10px;
     background: rgba(16, 187, 135, 1);
-    font-family: Inter;
+
+    font-family: 'Inter', 'NotoSans';
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
@@ -958,7 +991,7 @@ form select {
 
 
 .popular .popular-flex .popular-items h3 {
-    font-family: Inter;
+    font-family: 'Inter';
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
@@ -1231,7 +1264,7 @@ form select {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: Inter;
+    font-family: 'Inter', 'NotoSans';
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
@@ -1279,7 +1312,7 @@ form select {
     border-radius: 10px;
     background: var(--white, #FFF);
     color: var(--black, #000);
-    font-family: Inter;
+    font-family: 'Inter';
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -1394,7 +1427,7 @@ form select {
 .call-col p {
     max-width: 352px;
     color: var(--green-02, #487B6C);
-    font-family: Inter;
+    font-family: 'Inter';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -1456,7 +1489,7 @@ form select {
     border: transparent;
     border-radius: 10px;
     color: rgba(229, 229, 229, 1);
-    font-family: Inter;
+    font-family: 'Inter', 'NotoSans';
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -1663,7 +1696,7 @@ footer a {
     display: block;
     text-decoration: none;
     color: var(--black, #000);
-    font-family: Inter;
+    font-family: 'Inter', 'NotoSans';
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
