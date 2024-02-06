@@ -192,7 +192,7 @@ nav .nav_part-2 button:not(#constructor) {
         border-bottom: 1px solid rgba(242, 242, 242, 1);
         width: 100%;
         max-width: 1280px;
-        padding: 0 40px;
+        padding: 10px 40px;
     }
 
     nav .nav_part-1 a {
@@ -204,7 +204,7 @@ nav .nav_part-2 button:not(#constructor) {
 @media(max-width:768px) {
     nav {
         position: fixed;
-        padding: 0 34px;
+        padding: 10 34px;
         justify-content: space-between;
     }
 
@@ -251,6 +251,7 @@ nav .nav_part-2 button:not(#constructor) {
 
 @media (max-width:430px) {
     nav {
+        padding: 10px;
         position: fixed;
     }
 
@@ -322,13 +323,13 @@ nav .nav_part-2 button:not(#constructor) {
 
 @media (max-width:1366px) {
     .breadcrumb {
-        padding: 90px 40px 0 40px;
+        padding: 60px 40px 0 40px;
     }
 }
 
 @media (max-width:768px) {
     .breadcrumb {
-        padding: 120px 34px 0 34px;
+        padding: 70px 34px 0 34px;
     }
 
     .breadcrumb li a {
@@ -338,7 +339,7 @@ nav .nav_part-2 button:not(#constructor) {
 
 @media (max-width:430px) {
     .breadcrumb {
-        padding: 120px 20px 0 20px;
+        padding: 70px 20px 0 20px;
     }
 }
 
