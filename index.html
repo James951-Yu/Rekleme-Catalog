@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="EI=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+            <img src="images/logotype.png" alt="">
+
+
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960"
+                        width="20">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg></li>
+                <li><a href="#company" id="about-company">About Company</a></li>
+                <li><a href="#catolog">Catalog</a></li>
+                <li><a href="Promotion">Promotion</a></li>
+                <li><a href="#SERVICE">Services</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <li><a href="#Search"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            </ul>
+            <ul class="nav_part-1">
+                <li class="hideOnMobile"><i class="fa-solid fa-bars"></i></li>
+                <li class="hideOnMobile"><a href="#About_US" id="about-company">About Company</a></li>
+                <li class="hideOnMobile"><a href="#catolog">Catalog</a></li>
+                <li class="hideOnMobile"><a href="Promotion">Promotion</a></li>
+                <li class="hideOnMobile"><a href="#Service">Services</a></li>
+                <li class="hideOnMobile"><a href="#Contact">Contact</a></li>
+                <li class="hideOnMobile"><a href="#Search"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            </ul>
+
+            <div class="nav_part-2">
+                <button class="button-svg"><i class="fa-regular fa-user"></i></button>
+                <button class="button-svg"><i class="fa fa-cart-shopping"></i></button>
+                <button class="button-svg" id="call-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                        viewBox="0 0 25 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.34194 9.85637C8.12925 13.7483 11.3097 16.8424 15.2635 18.519L15.276 18.5243L16.0398 18.8648C17.0124 19.2981 18.1557 18.9903 18.7793 18.1273L20.0536 16.3635C20.1315 16.2558 20.1114 16.106 20.008 16.0225L17.7832 14.2277C17.6726 14.1385 17.51 14.1593 17.4254 14.2734L16.5595 15.4418C16.3492 15.7256 15.9695 15.8242 15.6477 15.6786C12.6913 14.3406 10.3156 11.9649 8.97769 9.00852C8.83208 8.68676 8.93067 8.30701 9.21442 8.09673L10.3828 7.23087C10.497 7.14626 10.5177 6.98363 10.4285 6.87304L8.63348 4.64799C8.55006 4.54458 8.40031 4.52449 8.29258 4.60227L6.51928 5.88242C5.6505 6.50961 5.34454 7.66246 5.788 8.63791L6.34134 9.85507C6.34154 9.8555 6.34174 9.85594 6.34194 9.85637ZM14.6716 19.8973C10.3756 18.0737 6.92021 14.7107 4.97816 10.481L4.97699 10.4784L4.42249 9.2587C3.68339 7.63295 4.19332 5.71154 5.6413 4.66622L7.41459 3.38607C8.16871 2.84166 9.21694 2.98226 9.80094 3.70616L11.596 5.9312C12.2205 6.70537 12.0751 7.84377 11.2759 8.43601L10.6064 8.93216C11.7373 11.1266 13.5297 12.9189 15.7241 14.0499L16.2203 13.3803C16.8125 12.5812 17.9509 12.4357 18.7251 13.0603L20.9498 14.8551C21.6739 15.4392 21.8143 16.4879 21.2695 17.242L19.9951 19.0057C18.9558 20.4442 17.0504 20.9572 15.4293 20.2349L14.6716 19.8973Z"
+                            fill="black" />
+                    </svg></button>
+                <button class="button-svg" id="constructor">Constructor <i
+                        class="fa-regular fa-pen-to-square"></i></button>
+                <button class="button-svg" id="menu" onclick="showSidebar()"> Menu<i class="fa-solid fa-bars"></i>
+                </button>
+                <button class="button-svg" id="menu-1" onclick="showSidebar()"><i class="fa-solid fa-bars"
+                        onclick="showMenu()"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <section class="designing-process">
+        <main class="container">
+            <div class="image-wrapper">
+                <div class="image-col-1">
+                    <img id="two-cups" src="images/Rectangle 3994.png" alt="">
+                    <p>New</p>
+                </div>
+                <div class="image-col-2">
+                    <div class="button-in-image">
+                        <img id="top-cup" src="images/Subtract.png" alt="">
+                        <button class="button-svg" id="button-up"><svg xmlns="http://www.w3.org/2000/svg" height="15"
+                                viewBox="0 -960 960 960" width="15">
+                                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                            </svg></button>
+                    </div>
+                    <div class="button-in-image">
+                        <img id="bottom-cup" src="images/Subtract (1).png" alt="">
+                        <button class="button-svg" id="button-down"><svg xmlns="http://www.w3.org/2000/svg" height="15"
+                                viewBox="0 -960 960 960" width="15">
+                                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                            </svg></button>
+                    </div>
+                </div>
+            </div>
+            <button class="button-desc-file">
+                <h2 id="describtion">Describtion</h2>
+                <h2>File</h2>
+            </button>
+            <div class="two-paragraph">
+                <p id="first-paragraph">The opposite view implies that the key features of the project structure are
+                    nothing more than the
+                    quintessence of marketing's victory over intelligence and should be associatively distributed across
+                    industries. On the other hand, further development of various arguments! The model of organizational
+                    activity clearly captures the need for areas of progressive development.</p>
+                <p id="second-paragraph">On the other hand, further development of various arguments! The model of
+                    organizational activity
+                    clearly captures the need for areas of progressive development.</p>
+            </div>
+            <div class="measure-details-1">
+                <div class="measure dimention">
+                    <h3>Dimensions:</h3>
+                    <p>950х81х81 mm</p>
+                </div>
+                <div class="measure material">
+                    <h3>Material:</h3>
+                    <p>Ceramic</p>
+                </div>
+                <div class="measure application">
+                    <h3>Application area:</h3>
+                    <p>205х75 mm</p>
+                </div>
+
+            </div>
+            <div class="measure-details-2">
+                <div class="measure weight">
+                    <h3>Weight:</h3>
+                    <p>361 gr</p>
+                </div>
+            </div>
+        </main>
+        <aside class="product-making">
+            <h2 class="secondary-title">
+                Sublimation mug "Standard"
+            </h2>
+            <div class="product">
+                <p class="product number">Art. 1256.60.2</p>
+                <p class="product volume">2,786 pcs in stock</p>
+            </div>
+
+            <form action="Product-design">
+                <div class="view-color_selector">
+                    <label for="color"></label>
+                    <select name="Color" id="color">
+                        <option value="Color">Color</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Violet">Violet</option>
+                    </select>
+                    <label for="view"></label>
+                    <select name="View" id="view">
+                        <option value="View">View</option>
+                        <option value="Top">Top-view</option>
+                        <option value="Right">Right-view</option>
+                        <option value="Left">Left-view</option>
+                        <option value="Bottom">Bottom-view</option>
+                    </select>
+                </div>
+                <button onclick="myFunc" type="button" class="collapsible">Application method</button>
+
+                <div class="content">
+
+                    <div class="content-1">
+                        <img id="no-apply-close" src="images/close_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                        <h4>No application</h4>
+                    </div>
+                    <div class="content-1">
+                        <img src="images/Laser.png" alt="">
+                        <h4>Engraving</h4>
+                    </div>
+                    <div class="content-1">
+                        <img src="images/Roller.png" alt="">
+                        <h4>Pad printing</h4>
+                    </div>
+                </div>
+
+
+            </form>
+            <div class="price-row">
+                <div class="price-col">
+                    <h5>Result</h5>
+                    <h5 id="old-price">$206</h5>
+                </div>
+                <div class="price-col">
+                    <h2 class="secondary-title">$147</h2>
+                    <h5>Per piece</h5>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="buttons-row">
+                    <button>Add to cart</button>
+                    <button id="counter">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
+                            id="decrement">
+                            <path d="M200-440v-80h560v80H200Z" />
+                        </svg>
+                        <span id="value">10</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
+                            id="increment">
+                            <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                        </svg>
+                    </button>
+                </div>
+                <button id="designer-button">Open in designer <svg xmlns="http://www.w3.org/2000/svg" height="20"
+                        viewBox="0 -960 960 960" width="20">
+                        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                    </svg></button>
+            </div>
+            <p>
+                Please note that each item has a minimum quantity to add to cart.
+            </p>
+        </aside>
+    </section>
+
+
+    <!-- Popular -->
+    <section class="popular">
+        <h1 class="main-title">Popular and new <span id="underline">products</span></h1>
+        <div class="popular-flex">
+            <div class="popular-items">
+                <div class="parent-img">
+                    <img src="images/images (3).png" alt="">
+                    <p class="p-price">From $75</p>
+                </div>
+                <h3>Mug "Standard"</h3>
+                <button>Select <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 -960 960 960" width="16">
+                        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                    </svg></button>
+            </div>
+            <div class="popular-items">
+                <div class="parent-img">
+                    <img src="images/images (2).png" alt="">
+                    <p class="p-price">From $5</p>
+                </div>
+                <h3>Eco-Pen</h3>
+                <button>Select <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 -960 960 960" width="16">
+                        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                    </svg></button>
+            </div>
+            <div class="popular-items">
+                <div class="parent-img">
+                    <img src="images/images (1).png" alt="">
+                    <img id="logo-black" src="images/logotypeblack.png" alt="">
+                    <p class="p-price">From $25</p>
+                </div>
+                <h3>Case for iPhone 8+</h3>
+                <button>Select <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 -960 960 960" width="16">
+                        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                    </svg></button>
+            </div>
+            <div class="popular-items">
+                <div class="parent-img">
+                    <img src="images/images.png" alt="">
+                    <p class="p-price">From $175</p>
+                </div>
+                <h3>Flash card "Elegant"</h3>
+                <button>Select <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 -960 960 960" width="16">
+                        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                    </svg></button>
+            </div>
+
+        </div>
+        <button id="backward-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960"
+                width="20">
+                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+            </svg>
+        </button>
+        <button id="forward-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960"
+                width="20">
+                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+            </svg>
+        </button>
+    </section>
+
+
+
+    <section id="faqs">
+        <h1 class="main-title"> Frequently Asked <span id="underline">Questions</span></h1>
+        <div class="faqs-row">
+            <ul class="faqs-col">
+                <li>
+                    <label for="first">Do you deliver throughout Russia? <img src="images/caret-down.png"
+                            alt=""></label>
+                    <input type="radio" name="FAQ" id="first">
+                    <div class="answers">
+                        <p>Quisque in lacus a urna fermentum euismod. Integer mi nibh, dapibus ac scelerisque
+                            eu, facilisis quis purus. Morbi blandit sit amet turpis nec</p>
+                    </div>
+                </li>
+                <li>
+                    <label for="second">Do you print on paper? <img src="images/caret-down.png" alt=""></label>
+                    <input type="radio" name="FAQ" id="second">
+                    <div class="answers">
+                        <p>Quisque in lacus a urna fermentum euismod. Integer mi nibh, dapibus ac scelerisque
+                            eu, facilisis quis purus. Morbi blandit sit amet turpis nec</p>
+                    </div>
+                </li>
+                <li>
+                    <label for="third">Can I make a print on my item? <img src="images/caret-down.png" alt=""></label>
+                    <input type="radio" name="FAQ" id="third">
+                    <div class="answers">
+                        <p>Quisque in lacus a urna fermentum euismod. Integer mi nibh, dapibus ac scelerisque
+                            eu, facilisis quis purus. Morbi blandit sit amet turpis nec</p>
+                    </div>
+                </li>
+                <li>
+                    <label for="fourth">How quickly can you place an order? <img src="images/caret-down.png"
+                            alt=""></label>
+                    <input type="radio" name="FAQ" id="fourth">
+                    <div class="answers">
+                        <p>Quisque in lacus a urna fermentum euismod. Integer mi nibh, dapibus ac scelerisque
+                            eu, facilisis quis purus. Morbi blandit sit amet turpis nec</p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="faqs-col">
+                <li>
+                    <label for="fifth">Can I order one item? <img src="images/caret-down.png" alt=""></label>
+                    <input type="radio" name="FAQ" id="fifth">
+                    <div class="answers">
+                        <p>Quisque in lacus a urna fermentum euismod. Integer mi nibh, dapibus ac scelerisque
+                            eu, facilisis quis purus. Morbi blandit sit amet turpis nec</p>
+                    </div>
+                </li>
+                <li>
+                    <label for="sixth">Can I order from abroad? <img src="images/caret-down.png" alt=""></label>
+                    <input type="radio" name="FAQ" id="sixth">
+                    <div class="answers">
+                        <p>Quisque in lacus a urna fermentum euismod. Integer mi nibh, dapibus ac scelerisque
+                            eu, facilisis quis purus. Morbi blandit sit amet turpis nec</p>
+                    </div>
+                </li>
+                <li>
+                    <label for="seeventh">Can I arrange pickup? <img src="images/caret-down.png" alt=""></label>
+                    <input type="radio" name="FAQ" id="seventh">
+                    <div class="answers">
+                        <p>Quisque in lacus a urna fermentum euismod. Integer mi nibh, dapibus ac scelerisque
+                            eu, facilisis quis purus. Morbi blandit sit amet turpis nec</p>
+                    </div>
+                </li>
+                <li>
+                    <label for="eightth">If I am not a legal entity, will we cooperate? <img src="images/caret-down.png"
+                            alt=""></label>
+                    <input type="radio" name="FAQ" id="eightth">
+                    <div class="answers">
+                        <p>Quisque in lacus a urna fermentum euismod. Integer mi nibh, dapibus ac scelerisque
+                            eu, facilisis quis purus. Morbi blandit sit amet turpis nec</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button>More questions <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.34829 5.90473C2.58451 3.03899 4.97928 0.833496 7.85474 0.833496H8.14269C11.0182 0.833496 13.4129 3.03899 13.6491 5.90473C13.776 7.44416 13.3005 8.97276 12.3227 10.1685L9.12737 14.0764C8.54403 14.7898 7.4534 14.7898 6.87006 14.0764L3.67469 10.1685C2.69692 8.97276 2.2214 7.44416 2.34829 5.90473ZM7.85474 1.8335C5.49971 1.8335 3.53837 3.63981 3.34491 5.98688C3.2393 7.26811 3.63506 8.54032 4.44884 9.53554L7.64421 13.4434C7.82743 13.6675 8.17 13.6675 8.35322 13.4434L11.5486 9.53554C12.3624 8.54032 12.7581 7.26811 12.6525 5.98688C12.4591 3.63981 10.4977 1.8335 8.14269 1.8335H7.85474Z"
+                    fill="black" />
+                <path
+                    d="M8.66538 10.6668C8.66538 11.035 8.3669 11.3335 7.99871 11.3335C7.63052 11.3335 7.33205 11.035 7.33205 10.6668C7.33205 10.2986 7.63052 10.0002 7.99871 10.0002C8.3669 10.0002 8.66538 10.2986 8.66538 10.6668Z"
+                    fill="black" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.99871 5.16683C7.36757 5.16683 6.83205 5.69711 6.83205 6.38111C6.83205 6.65726 6.60819 6.88111 6.33205 6.88111C6.05591 6.88111 5.83205 6.65726 5.83205 6.38111C5.83205 5.17157 6.78891 4.16683 7.99871 4.16683C9.20852 4.16683 10.1654 5.17157 10.1654 6.38111C10.1654 7.3351 9.57323 8.15673 8.73074 8.46571C8.64776 8.49614 8.58026 8.5427 8.53953 8.58805C8.50141 8.63049 8.49871 8.6564 8.49871 8.66683C8.49871 8.94297 8.27486 9.16683 7.99871 9.16683C7.72257 9.16683 7.49871 8.94297 7.49871 8.66683C7.49871 8.05109 7.99435 7.67065 8.38642 7.52686C8.83408 7.36268 9.16538 6.91664 9.16538 6.38111C9.16538 5.69711 8.62986 5.16683 7.99871 5.16683Z"
+                    fill="black" />
+            </svg>
+        </button>
+    </section>
+
+    <!-- Back-call -->
+    <section id="call-center">
+        <div class="call-row">
+            <div class="call-col">
+                <h1 class="main-title">Do you need <span id="underline">help?</span></h1>
+                <p>Leave your details and we will call you back and resolve the issue. Remember, by leaving contacts you
+                    consent to the processing of personal data.</p>
+            </div>
+            <form action="call-center">
+                <div id="name-fill">
+                    <label class="form-label" for="full_name">Name</label>
+                    <input type="text" id="full_name" placeholder="James">
+                </div>
+                <div id="query-for">
+
+                    <label class="form-label" for="tel_number">Mobile number</label>
+                    <div id="call-forward">
+                        <input type="tel" id="tel_number" placeholder="+7 000 000 00 00">
+
+                        <button><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
+                                    d="M11.226 7.10845C10.9819 6.86437 10.9819 6.46864 11.226 6.22456C11.4701 5.98048 11.8658 5.98048 12.1099 6.22456L15.4432 9.5579C15.6873 9.80197 15.6873 10.1977 15.4432 10.4418L12.1099 13.7751C11.8658 14.0192 11.4701 14.0192 11.226 13.7751C10.9819 13.531 10.9819 13.1353 11.226 12.8912L13.4924 10.6248H5.41797C5.07279 10.6248 4.79297 10.345 4.79297 9.99984C4.79297 9.65466 5.07279 9.37484 5.41797 9.37484H13.4924L11.226 7.10845Z"
+                                    fill="black" />
+                            </svg></button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <img src="images/pattern (1).png" alt="">
+    </section>
+
+    <!-- Footerr -->
+    <footer>
+        <div class="menu-row">
+            <div>
+                <img id="logo-rek" src="images/logotype.png" alt="">
+            </div>
+            <div class="combo-col">
+                <div class="combo-row">
+                    <div class="menu-list">
+
+                        <div class="list-order">
+                            <a href="">About Company</a>
+                            <a href="">Portfolio</a>
+                            <a href="">Vacancies</a>
+                            <a href="">Dealers</a>
+                            <a href="">Guarantee</a>
+                        </div>
+                        <div class="list-order">
+                            <a href="">Contacts</a>
+                            <a href="">Stock</a>
+                            <a href="">Production</a>
+                            <a href="">Shipping & Payment</a>
+                            <a href="">Exchange & Return</a>
+                        </div>
+                        <div class="list-order">
+                            <a href="" id="Serve">Services</a>
+                            <a href="">Silkscreen printing</a>
+                            <a href="">Pad printing</a>
+                            <a href="">Engraving</a>
+                            <a href="">Printing on bags</a>
+                        </div>
+                    </div>
+                    <div class="service-list">
+                        <div class="list-order">
+
+                            <a href="">Engraving</a>
+                            <a href="">Embossing</a>
+                            <a href="">Cliche</a>
+                            <a href="">Full color printing</a>
+                        </div>
+                        <div class="list-order">
+                            <a href="">Polymer filling</a>
+                            <a href="">Design services</a>
+                            <a href="">USB recording</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-row">
+                    <div class="catalog-list-1">
+                        <div class="list-order">
+                            <a href="" id="Serve">Catalog</a>
+                            <a href="">Accessories</a>
+                            <a href="">Textile</a>
+                        </div>
+                    </div>
+                    <div class="catalog-list-2">
+                        <div class="list-order">
+                            <a href="">Flash cards</a>
+                            <a href="">Xiaomi</a>
+                        </div>
+                        <div class="list-order" id="mug-device">
+                            <a href="">Smart mugs</a>
+                            <a href="">External drives</a>
+                        </div>
+                        <div class="list-order">
+                            <a href="">Office</a>
+                            <a href="">Package</a>
+                        </div>
+                        <div id="presents" class="list-order">
+                            <a href="" id="Presents">Presents</a>
+                            <a href="">Other events</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-row-2">
+            <div class="MMM">
+                <div class="menu-col">
+                    <div class="logo-rek">
+                        <img src="images/logotype.png" alt="">
+                    </div>
+                </div>
+                <div class="menu-col-2">
+                    <div class="list-order">
+                        <a href="">About Company</a>
+                        <a href="">Portfolio</a>
+                        <a href="">Vacancies</a>
+                        <a href="">Dealers</a>
+                    </div>
+                    <div class="list-order">
+                        <a href="">Contacts</a>
+                        <a href="">Stock</a>
+                        <a href="">Production</a>
+                    </div>
+                    <div class="list-order">
+                        <a href="">Shipping & Payment</a>
+                        <a href="">Exchange & Return</a>
+                        <a href="">Guarantee</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service-row">
+                <div class="service-col">
+                    <div class="list-order">
+                        <a href="" id="Serve">Services</a>
+                        <a href="">Silkscreen printing</a>
+                        <a href="">Pad printing</a>
+                        <a href="">Engraving</a>
+                    </div>
+                </div>
+                <div class="service-col-2">
+                    <div class="list-order">
+                        <a href="">Printing on bags</a>
+                        <a href="">Engraving</a>
+                        <a href="">Embossing</a>
+                    </div>
+                    <div class="list-order" id="Cliche">
+                        <a href="">Cliche</a>
+                        <a href="">Full color printing</a>
+                        <a href="">USB recording</a>
+                    </div>
+                    <div class="list-order" id="Polymer">
+                        <a href="">Polymer filling</a>
+                        <a href="">Design services</a>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-row">
+                <div class="catalog-col">
+                    <div class="list-order">
+                        <a href="" id="Serve">Catalog</a>
+                        <a href="">Accessories</a>
+                        <a href="">Flash cards</a>
+                        <a href="">Textile</a>
+                    </div>
+                </div>
+                <div class="catalog-col-2">
+                    <div class="list-order">
+                        <a href="">Smart mugs</a>
+                        <a href="">Xiaomi</a>
+                        <a href="">Package</a>
+                    </div>
+                    <div class="list-order" id="mug-device">
+                        <a href="">Office</a>
+                        <a href="">External drives</a>
+                    </div>
+                    <div id="presents" class="list-order">
+                        <a href="" id="Presents">Presents</a>
+                        <a href="">Other events</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="menu-row-3">
+            <div class="logo-rek">
+                <img src="images/logotype.png" alt="">
+            </div>
+            <div class="menu-list-3">
+                <div class="list-order">
+                    <a href="">About Company</a>
+                    <a href="">Portfolio</a>
+                    <a href="">Vacancies</a>
+                    <a href="">Dealers</a>
+                    <a href="">Guarantee</a>
+                </div>
+                <div class="list-order">
+                    <a href="">Contacts</a>
+                    <a href="">Stock</a>
+                    <a href="">Production</a>
+                    <a href="">Shipping & Payment</a>
+                    <a href="">Exchange & Return</a>
+                </div>
+
+            </div>
+
+            <div class="service-col-3">
+                <div class="list-order">
+                    <a href="">Services</a>
+                    <a href="">Silkscreen printing</a>
+                    <a href="">Pad printing</a>
+                    <a href="">Engraving</a>
+                    <a href="">Cliche</a>
+                    <a href="">Full color printing</a>
+                    <a href="">USB recording</a>
+                </div>
+                <div class="list-order" id="second-col">
+                    <a href="">Printing on bags</a>
+                    <a href="">Engraving</a>
+                    <a href="">Embossing</a>
+                    <a href="">Polymer filling</a>
+                    <a href="">Design services</a>
+                </div>
+            </div>
+            <div class="catalog-col-3">
+                <div class="list-order">
+                    <a href="">Catalog</a>
+                    <a href="">Accessories</a>
+                    <a href="">Textile</a>
+                    <a href="">Flash cards</a>
+                    <a href="">Office</a>
+                    <a href="">External drives</a>
+                </div>
+                <div class="list-order" id="second-col">
+                    <a href="">Smart mugs</a>
+                    <a href="">Xiaomi</a>
+                    <a href="">Package</a>
+                    <a href="">Other events</a>
+                    <a href="" id="Presents">Presents</a>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="footer-bottom">
+            <div class="icons">
+                <button><img class="image-11" src="images/instagram-icon.png" alt=""></button>
+                <button><img class="image-11" src="images/fb-icon.png" alt=""></button>
+                <button><img class="image-11" src="images/yt-icon.png" alt=""></button>
+            </div>
+            <div class="contact-detail">
+                <div class="detail-list">
+                    <a href="" id="City-color">Moscow</a>
+                    <p>+7 (945) 133-16-28</p>
+                </div>
+                <div class="detail-list">
+                    <a href="" id="City-color">Ulan-Ude</a>
+                    <p>+7 (925) 272-83-08</p>
+                </div>
+                <div class="detail-list">
+                    <a href="" id="specific-color"><i class="fa-regular fa-user"></i>Personal cabinet</a>
+                    <p>info@reklem.ru</p>
+                </div>
+                <div class="detail-list">
+                    <a href="" id="specific-color"><i class="fa-regular fa-file"></i>Data processing</a>
+                    <p id="Copyright">© Copyright 2021</p>
+                </div>
+            </div>
+            <div class="contact-detail-2">
+                <div class="detail-row-2">
+                    <div class="detail-list">
+                        <a href="" id="City-color">Moscow</a>
+                        <p>+7 (945) 133-16-28</p>
+                    </div>
+                    <div class="detail-list">
+                        <a href="" id="specific-color"><i class="fa-regular fa-user"></i>Personal cabinet</a>
+                        <p>info@reklem.ru</p>
+                    </div>
+                </div>
+                <div class="detail-row-2">
+                    <div class="detail-list">
+                        <a href="" id="City-color">Ulan-Ude</a>
+                        <p>+7 (925) 272-83-08</p>
+                    </div>
+
+                    <div class="detail-list">
+                        <a href="" id="specific-color"><i class="fa-regular fa-file"></i>Data processing</a>
+                        <p id="Copyright">© Copyright 2021</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
