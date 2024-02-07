@@ -155,21 +155,23 @@
                         <option value="Bottom">Bottom-view</option>
                     </select>
                 </div>
-                <button onclick="myFunc" type="button" class="collapsible">Application method</button>
+                <button onclick="myFunc" type="button" class="collapsible" id="collapse">Application method</button>
 
                 <div class="content">
-
                     <div class="content-1">
-                        <img id="no-apply-close" src="images/close_FILL0_wght400_GRAD0_opsz24.svg" alt="">
-                        <h4>No application</h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
+                        <h4 id="one-method">No application</h4>
                     </div>
                     <div class="content-1">
                         <img src="images/Laser.png" alt="">
-                        <h4>Engraving</h4>
+                        <h4 id="one-method">Engraving</h4>
                     </div>
                     <div class="content-1">
                         <img src="images/Roller.png" alt="">
-                        <h4>Pad printing</h4>
+                        <h4 id="one-method">Pad printing</h4>
                     </div>
                 </div>
 
@@ -187,7 +189,7 @@
             </div>
             <div class="buttons">
                 <div class="buttons-row">
-                    <button>Add to cart</button>
+                    <button onclick="showModal()">Add to cart</button>
                     <button id="counter">
                         <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
                             id="decrement">
@@ -210,7 +212,57 @@
             </p>
         </aside>
     </section>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
+        <h1 class="main-title">Congratulations!!! <br> We have successfully received your order!</h1>
+        <div class="modal-content">
+            <h2 class="secondary-title">
+                <span id="new-value" class="close">Sublimation mug "Standard"</span>
+            </h2>
+            <p>Color:<span></span></p>
+            <p>View:<span></span></p>
+            <p>Application method:<span></span></p>
+            <p>Price per piece:$147</p>
+            <p>Number of orders:<span></span></p>
+            <table>
+                <thead>
+                    <th>Design List</th>
+                    <th>Design Order</th>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Color</td>
+                        <td>Red</td>
+
+                    </tr>
+                    <tr>
+                        <td>View</td>
+                        <td>Top-view</td>
+
+                    </tr>
+                    <tr>
+                        <td>Application Method</td>
+                        <td>Engraving</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Price p/p</td>
+                        <td>$147</td>
+
+                    </tr>
+                    <tr>
+                        <td>Number of Orders</td>
+                        <td>15</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button onclick="hideModal()" class="modal-close">Awesome! </button>
+    </div>
 
     <!-- Popular -->
     <section class="popular">
@@ -272,7 +324,7 @@
     </section>
 
 
-
+    <!-- Frequently Asked Questions -->
     <section id="faqs">
         <h1 class="main-title"> Frequently Asked <span id="underline">Questions</span></h1>
         <div class="faqs-row">
@@ -371,6 +423,7 @@
                 <p>Leave your details and we will call you back and resolve the issue. Remember, by leaving contacts you
                     consent to the processing of personal data.</p>
             </div>
+
             <form action="call-center">
                 <div id="name-fill">
                     <label class="form-label" for="full_name">Name</label>
@@ -382,19 +435,27 @@
                     <div id="call-forward">
                         <input type="tel" id="tel_number" placeholder="+7 000 000 00 00">
 
-                        <button><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                                fill="none">
+                        <div onclick="submitBtn()" id="submit-button"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" viewBox="0 0 20 20" fill="none">
                                 <path
                                     d="M11.226 7.10845C10.9819 6.86437 10.9819 6.46864 11.226 6.22456C11.4701 5.98048 11.8658 5.98048 12.1099 6.22456L15.4432 9.5579C15.6873 9.80197 15.6873 10.1977 15.4432 10.4418L12.1099 13.7751C11.8658 14.0192 11.4701 14.0192 11.226 13.7751C10.9819 13.531 10.9819 13.1353 11.226 12.8912L13.4924 10.6248H5.41797C5.07279 10.6248 4.79297 10.345 4.79297 9.99984C4.79297 9.65466 5.07279 9.37484 5.41797 9.37484H13.4924L11.226 7.10845Z"
                                     fill="black" />
-                            </svg></button>
+                            </svg></div>
                     </div>
                 </div>
             </form>
-
+            <div class="modaltwo" id="myModal-1">
+                <div class="modal-content-2">
+                    <span onclick="closeBtn()" class="close">&times;</span>
+                    <h1 class="main-title">Thank you for contacting us about your concern! We will contact you soon ;)
+                    </h1>
+                </div>
+            </div>
+            <img src="images/pattern (1).png" alt="">
         </div>
-        <img src="images/pattern (1).png" alt="">
+
     </section>
+
 
     <!-- Footerr -->
     <footer>
