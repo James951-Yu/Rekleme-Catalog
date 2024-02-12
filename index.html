@@ -137,75 +137,94 @@
                 <p class="product volume">2,786 pcs in stock</p>
             </div>
 
-            <form action="Product-design">
+            <form action="Product-design" id="form" method="post">
                 <div class="view-color_selector">
                     <label for="color"></label>
-                    <select name="Color" id="color">
-                        <option value="Color">Color</option>
-                        <option value="Red">Red</option>
-                        <option value="Blue">Blue</option>
-                        <option value="Violet">Violet</option>
+                    <select name="color" id="select-color" required>
+                        <option value="color">Color</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="violet">Violet</option>
                     </select>
                     <label for="view"></label>
-                    <select name="View" id="view">
-                        <option value="View">View</option>
-                        <option value="Top">Top-view</option>
-                        <option value="Right">Right-view</option>
-                        <option value="Left">Left-view</option>
-                        <option value="Bottom">Bottom-view</option>
+                    <select name="view" id="select-view" required>
+                        <option value="view">View</option>
+                        <option value="top-view">Top-view</option>
+                        <option value="right-view">Right-view</option>
+                        <option value="left-view">Left-view</option>
+                        <option value="bottom-view">Bottom-view</option>
+                    </select>
+
+                    <label for="method"></label>
+                    <select name="method" id="select-method" required>
+                        <option value="default">Application method</option>
+                        <option value="none">
+                            <h4>No application</h4>
+                        </option>
+                        <option value="engraving">
+                            <h4>Engraving </h4>
+                        </option>
+                        <option value="pad-printing">
+                            <h4>Pad printing</h4>
+                        </option>
                     </select>
                 </div>
-                <button onclick="myFunc" type="button" class="collapsible" id="collapse">Application method</button>
+                <button onclick="myFunc" type="" value="default" class="collapsible" id="collapse"
+                    placeholder="Application method" name="method" require>Application method</button>
 
                 <div class="content">
-                    <div class="content-1">
+                    <div class="content-one">
                         <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30">
                             <path
                                 d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                         </svg>
-                        <h4 id="one-method">No application</h4>
+                        <h4><input name="no application" type="text" value="No application" /></h4>
                     </div>
-                    <div class="content-1">
+                    <div class="content-one">
                         <img src="images/Laser.png" alt="">
-                        <h4 id="one-method">Engraving</h4>
+                        <h4>Engraving </h4>
                     </div>
-                    <div class="content-1">
+                    <div class="content-one">
                         <img src="images/Roller.png" alt="">
-                        <h4 id="one-method">Pad printing</h4>
+                        <h4>Pad printing</h4>
                     </div>
                 </div>
+
+
+                <div class="price-row">
+                    <div class="price-col">
+                        <h5>Result</h5>
+                        <h5 id="old-price">$206</h5>
+                    </div>
+                    <div class="price-col">
+                        <h2 value="price" class="secondary-title"> <input name="price" id="select-newprice" type=""
+                                value="$147" />
+                            <h5>Per piece</h5>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="buttons-row">
+                        <input type="submit" placeholder="Add to Cart" value="Add to cart" id="cart" class="cart-btn"
+                            onclick="showModal()" aria-required="true">
+                        <button type="button" id="counter" aria-required="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
+                                id="decrement">
+                                <path d="M200-440v-80h560v80H200Z" />
+                            </svg>
+                            <input name="quantity" type="" value="10" id="value" />
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
+                                id="increment">
+                                <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                            </svg>
+                        </button>
+                    </div>
 
 
             </form>
-            <div class="price-row">
-                <div class="price-col">
-                    <h5>Result</h5>
-                    <h5 id="old-price">$206</h5>
-                </div>
-                <div class="price-col">
-                    <h2 class="secondary-title">$147</h2>
-                    <h5>Per piece</h5>
-                </div>
-            </div>
-            <div class="buttons">
-                <div class="buttons-row">
-                    <button onclick="showModal()">Add to cart</button>
-                    <button id="counter">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
-                            id="decrement">
-                            <path d="M200-440v-80h560v80H200Z" />
-                        </svg>
-                        <span id="value">10</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
-                            id="increment">
-                            <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
-                        </svg>
-                    </button>
-                </div>
-                <button id="designer-button">Open in designer <svg xmlns="http://www.w3.org/2000/svg" height="20"
-                        viewBox="0 -960 960 960" width="20">
-                        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
-                    </svg></button>
+            <button id="designer-button">Open in designer <svg xmlns="http://www.w3.org/2000/svg" height="20"
+                    viewBox="0 -960 960 960" width="20">
+                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                </svg></button>
             </div>
             <p>
                 Please note that each item has a minimum quantity to add to cart.
@@ -214,49 +233,46 @@
     </section>
     <!-- The Modal -->
     <div id="myModal" class="modal">
+        <span onclick="hideModal()" class="close">&times;</span>
 
         <h1 class="main-title">Congratulations!!! <br> We have successfully received your order!</h1>
-        <div class="modal-content">
+        <div class="modal-content" id="modalContent">
             <h2 class="secondary-title">
-                <span id="new-value" class="close">Sublimation mug "Standard"</span>
+                <p id="modalContent"></p>
+                <span>Sublimation mug "Standard"</span>
             </h2>
-            <p>Color:<span></span></p>
-            <p>View:<span></span></p>
-            <p>Application method:<span></span></p>
-            <p>Price per piece:$147</p>
-            <p>Number of orders:<span></span></p>
+
             <table>
                 <thead>
-                    <th>Design List</th>
-                    <th>Design Order</th>
+                    <th class="value-head">Design List</th>
+                    <th class="value-head">Design Order</th>
 
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Color</td>
-                        <td>Red</td>
+                        <td class="value-names">Color</td>
+                        <td id="color"></td>
 
                     </tr>
                     <tr>
-                        <td>View</td>
-                        <td>Top-view</td>
+                        <td class="value-names">View</td>
+                        <td id="view"></td>
 
                     </tr>
                     <tr>
-                        <td>Application Method</td>
-                        <td>Engraving</td>
+                        <td class="value-names">Application Method</td>
+                        <td id="method"></td>
 
                     </tr>
 
                     <tr>
-                        <td>Price p/p</td>
-                        <td>$147</td>
+                        <td class="value-names">Price p/p</td>
+                        <td id="newprice"></td>
 
                     </tr>
                     <tr>
-                        <td>Number of Orders</td>
-                        <td>15</td>
-
+                        <td class="value-names">Number of Orders</td>
+                        <td id="quantity"></td>
                     </tr>
                 </tbody>
             </table>
@@ -424,23 +440,24 @@
                     consent to the processing of personal data.</p>
             </div>
 
-            <form action="call-center">
+            <form action="call-center" method="post" id="contactForm">
                 <div id="name-fill">
-                    <label class="form-label" for="full_name">Name</label>
-                    <input type="text" id="full_name" placeholder="James">
+                    <label class="form-label" for="fullName">Name</label>
+                    <input type="text" value="" name="full name" id="full_name" placeholder="James" required>
                 </div>
                 <div id="query-for">
 
-                    <label class="form-label" for="tel_number">Mobile number</label>
+                    <label class="form-label" for="telNumber">Mobile number</label>
                     <div id="call-forward">
-                        <input type="tel" id="tel_number" placeholder="+7 000 000 00 00">
+                        <input type="tel" value="" name=" contact detail" id="tel_number" placeholder="+7 000 000 00 00"
+                            required="number">
 
-                        <div onclick="submitBtn()" id="submit-button"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                                height="20" viewBox="0 0 20 20" fill="none">
+                        <button onclick="submitBtn()" id="submit-button"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <path
                                     d="M11.226 7.10845C10.9819 6.86437 10.9819 6.46864 11.226 6.22456C11.4701 5.98048 11.8658 5.98048 12.1099 6.22456L15.4432 9.5579C15.6873 9.80197 15.6873 10.1977 15.4432 10.4418L12.1099 13.7751C11.8658 14.0192 11.4701 14.0192 11.226 13.7751C10.9819 13.531 10.9819 13.1353 11.226 12.8912L13.4924 10.6248H5.41797C5.07279 10.6248 4.79297 10.345 4.79297 9.99984C4.79297 9.65466 5.07279 9.37484 5.41797 9.37484H13.4924L11.226 7.10845Z"
                                     fill="black" />
-                            </svg></div>
+                            </svg></button>
                     </div>
                 </div>
             </form>

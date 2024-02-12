@@ -83,7 +83,7 @@ p {
 
 @media(max-width:768px) {
     .main-title {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .secondary-title {
@@ -570,7 +570,7 @@ nav .nav_part-2 button:not(#constructor) {
 form {
     display: flex;
     flex-direction: column;
-
+    gap: 30px
 }
 
 form select {
@@ -584,12 +584,13 @@ form select {
     border-radius: 5px;
     border: 1px solid rgba(242, 242, 242, 1);
     background-color: rgba(250, 250, 250, 1);
-    margin-bottom: 30px;
+
 }
 
 .view-color_selector {
     display: flex;
     flex-direction: column;
+    gap: 15px
 }
 
 .collapsible {
@@ -617,13 +618,29 @@ form select {
 }
 
 .content {
-    padding: 18px;
+    width: 100%;
+    background-image: url(images/caret-down.png);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 11px) center;
+    padding: 11px;
+    border-radius: 5px;
+    border: 1px solid rgba(242, 242, 242, 1);
+    background-color: rgba(250, 250, 250, 1);
+    /* padding: 18px;
     overflow: hidden;
     background-color: rgba(250, 250, 250, 1);
-    display: none;
+    display: block;
+    background-image: url(images/caret-down.png);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: 90%;
+    background-position-y: 5%; */
+    /*   background-position: calc(100% - 30px) center; */
+
 }
 
-.content-1 {
+.content-one {
 
     margin-bottom: 20px;
     overflow: hidden;
@@ -637,7 +654,7 @@ form select {
 
 }
 
-.content .content-1 svg {
+.content .content-one svg {
     border: transparent;
     border-radius: 8px;
     padding: 5px;
@@ -652,24 +669,24 @@ form select {
 
 
 
-.content .content-1 svg:hover {
+.content .content-one svg:hover {
     background-color: #10BB87;
 }
 
-.content .content-1 svg path {
+.content .content-one svg path {
     fill: rgba(16, 187, 135, 1);
     transition: 1s;
 
 }
 
-.content .content-1:hover svg path {
+.content .content-one:hover svg path {
     fill: rgba(250, 250, 250, 1);
 
 
 }
 
-.content-1 img,
-.content-1 h4 {
+.content-one img,
+.content-one h4 {
     border-radius: 5px;
 
     color: #000;
@@ -677,16 +694,16 @@ form select {
 
 }
 
-.content-1 h4:hover {
+.content-one h4:hover {
     background-color: none;
     color: rgba(16, 187, 135, 1);
 }
 
-.content-1 img:hover {}
+.content-one img:hover {}
 
 .price-row {
-    max-width: 144px;
-    height: 80px;
+    max-width: 150px;
+    height: 90px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -702,8 +719,14 @@ form select {
     flex-grow: 1;
 }
 
-.price-row .price-col h2 {
+
+#select-newprice {
+    font-size: 24px;
+    max-width: 60px;
+    border: transparent;
+    background-color: #10BB87;
     color: #fff;
+
 }
 
 #old-price {
@@ -733,10 +756,31 @@ form select {
     justify-content: space-between;
 }
 
+.buttons .buttons-row .cart-btn {
+    display: inline-flex;
+    gap: 15px;
+    max-width: 140px;
+    margin-right: 2px;
+    padding: 10px 30px;
+    border-radius: 8px;
+    border: transparent;
+    box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.15);
+    color: #000;
+    font-family: 'Inter', 'NotoSans';
+    background-color: rgba(242, 242, 242, 1);
+    transition: 1s;
+}
+
+.buttons .buttons-row .cart-btn:hover {
+    background-color: rgba(250, 250, 250, 1);
+    color: darkgreen;
+}
+
 .buttons .buttons-row button {
     display: inline-flex;
     gap: 15px;
-    padding: 10px 25px;
+    justify-content: space-evenly;
+    padding: 10px 30px;
     border-radius: 8px;
     border: transparent;
     box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.15);
@@ -758,6 +802,13 @@ form select {
 
 .buttons button:hover svg path {
     fill: rgba(16, 187, 135, 1);
+}
+
+#value {
+
+    max-width: 20px;
+    border: transparent;
+    background-color: rgba(242, 242, 242, 1);
 }
 
 #designer-button {
@@ -824,11 +875,11 @@ form select {
 
 
 
-    #color {
+    #select-color {
         flex-grow: 1;
     }
 
-    #view {
+    #select-view {
         margin-left: 20px;
         flex-grow: 1;
     }
@@ -926,15 +977,25 @@ form select {
     justify-content: center;
     align-items: center;
     position: fixed;
-    left: 25%;
-    top: 25%;
-    width: 50%;
-    height: 50%;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+
     z-index: 1;
     overflow: auto;
-    background-color: rgba(53, 187, 236, 0.93);
+    background-color: #fff;
     ;
-    padding-top: 30px;
+    padding-top: 50px 0;
+}
+
+.modal .close {
+    color: #000;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 48px;
+    font-weight: 500;
 }
 
 .modal h1 {
@@ -944,20 +1005,41 @@ form select {
 .modal-content {
 
     margin: auto;
-    padding: 20px;
-
     width: 60%;
-    height: 50%;
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.modal-content h2,
-.modal-content p {
-    font-family: 'Inter', 'NotoSans';
+.modal-content h2 {
+    line-height: 50px;
+    font-size: 24px;
     font-weight: 500;
-    font-size: 18px;
+    font-family: 'Inter';
+    text-align: center;
+}
+
+.modal-content table th {
+    font-weight: 500;
+    font-family: 'Inter', 'NotoSans';
+    font-size: 22px;
+    line-height: 40px;
+    text-align: left;
+    padding-bottom: 10px;
+    color: #10BB87;
+}
+
+.value-names {
+    color: var(--accent-color);
+}
+
+td {
+    font-family: 'Inter', 'NotoSans';
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 40px;
+
 }
 
 table {
@@ -966,6 +1048,14 @@ table {
     font-weight: 500;
     font-size: 18px;
 
+}
+
+table tr td:nth-child(1)::after {
+    content: "-- ";
+}
+
+table {
+    border-collapse: collapse;
 }
 
 .modal .modal-close {
@@ -981,6 +1071,80 @@ table {
     border: transparent;
 }
 
+@media (max-width:1366px) {
+    .modal h1 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width:768px) {
+    .modal h1 {
+        font-size: 20px;
+    }
+
+    table td {
+        padding-right: 10px;
+        padding-bottom: 10px;
+    }
+
+    table {
+        font-size: 16px;
+    }
+
+
+}
+
+@media (max-width:430px) {
+    .modal {
+        padding: 30px 10px;
+    }
+
+    .modal h1 {
+        padding-top: 20px;
+        font-size: 20px;
+    }
+
+    .modal .modal-close {
+        padding: 10px 30px;
+        font-size: 20px;
+
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .modal-content h2 {
+        line-height: 30px;
+        font-size: 18px;
+
+    }
+
+    .modal-content table th {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    td {
+        font-family: 'Inter', 'NotoSans';
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 30px;
+
+    }
+
+    .modal .modal-close {
+        margin: 10px auto;
+    }
+
+
+
+
+
+
+}
 
 
 /* Populars */
@@ -1530,6 +1694,7 @@ table {
     position: absolute;
     left: 740px;
     top: 17px;
+    z-index: 1;
 }
 
 #call-center .call-row form {
@@ -1605,12 +1770,14 @@ table {
 }
 
 #submit-button {
+    z-index: 2;
     padding: 9px;
     flex-shrink: 0;
     border: transparent;
     background-color: rgba(255, 255, 255, 1);
     border-radius: 8px;
     transition: 1s;
+
 }
 
 #submit-button:hover {
@@ -1621,17 +1788,17 @@ table {
 .modaltwo {
     display: none;
     position: fixed;
-    z-index: 1;
-    top: 25%;
+    z-index: 3;
+    top: 50%;
     left: 25%;
     width: 60%;
-    height: 40%;
+    padding: 30px 50px;
     background-color: #4433d8;
 
 }
 
 .modaltwo .modal-content-2 {
-    padding-top: 30px;
+
 
     background-color: #4433d8;
 
@@ -1642,7 +1809,6 @@ table {
     max-width: 700px;
     color: #F2F2F2;
     text-align: center;
-    font-weight: 325;
 
 }
 
@@ -1703,6 +1869,16 @@ table {
 @media (max-width:430px) {
     #call-center {
         padding: 30px 10px;
+    }
+
+    .modaltwo {
+        width: 80%;
+        left: 10%;
+        padding: 30px;
+    }
+
+    .modaltwo h1 {
+        font-size: 22px;
     }
 }
 
