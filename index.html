@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <body>
@@ -280,7 +281,7 @@
         <button onclick="hideModal()" class="modal-close">Awesome! </button>
     </div>
 
-    <!-- Popular -->
+    <!--Popular -->
     <section class="popular">
         <h1 class="main-title">Popular and new <span id="underline">products</span></h1>
         <div class="popular-flex">
@@ -340,7 +341,7 @@
     </section>
 
 
-    <!-- Frequently Asked Questions -->
+    <!--Frequently Asked Questions-->
     <section id="faqs">
         <h1 class="main-title"> Frequently Asked <span id="underline">Questions</span></h1>
         <div class="faqs-row">
@@ -431,7 +432,7 @@
         </button>
     </section>
 
-    <!-- Back-call -->
+    <!--Back - call-->
     <section id="call-center">
         <div class="call-row">
             <div class="call-col">
@@ -443,13 +444,13 @@
             <form action="call-center" method="post" id="contactForm">
                 <div id="name-fill">
                     <label class="form-label" for="fullName">Name</label>
-                    <input type="text" value="" name="full name" id="full_name" placeholder="James" required>
+                    <input type="text" value="" name="full name" id="fullName" placeholder="James" required>
                 </div>
                 <div id="query-for">
 
                     <label class="form-label" for="telNumber">Mobile number</label>
                     <div id="call-forward">
-                        <input type="tel" value="" name=" contact detail" id="tel_number" placeholder="+7 000 000 00 00"
+                        <input type="tel" value="" name="contact detail" id="telNumber" placeholder="+7 000 000 00 00"
                             required="number">
 
                         <button onclick="submitBtn()" id="submit-button"><svg xmlns="http://www.w3.org/2000/svg"
@@ -466,6 +467,7 @@
                     <span onclick="closeBtn()" class="close">&times;</span>
                     <h1 class="main-title">Thank you for contacting us about your concern! We will contact you soon ;)
                     </h1>
+                    <form action="Event-schedule"></form>
                 </div>
             </div>
             <img src="images/pattern (1).png" alt="">
@@ -473,8 +475,47 @@
 
     </section>
 
+    <section class="calendar-container">
+        <div class="calendar-header">
+            <p class="calendar-current-date"></p>
+            <div class="calendar-navigation">
+                <span id="calendar-prev" class="material-symbols-rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 -960 960 960" width="40">
+                        <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
+                    </svg>
+                </span>
+                <span id="calendar-next" class="material-symbols-rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 -960 960 960" width="40">
+                        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                    </svg>
+                </span>
 
-    <!-- Footerr -->
+            </div>
+
+        </div>
+        <div class="calendar-body">
+            <ul class="calendar-weekdays">
+                <li>Sunday</li>
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wednesday</li>
+                <li>Thursday</li>
+                <li>Friday</li>
+                <li>Saturday</li>
+            </ul>
+            <ul class="calendar-dates"></ul>
+        </div>
+
+        <div id="calendarModal">
+            <span onclick="closeCalendarModal()" class="closeX">&times;</span>
+
+            <h1>Events</h1>
+
+        </div>
+    </section>
+
+
+    <!--Footerr -->
     <footer>
         <div class="menu-row">
             <div>
