@@ -248,14 +248,16 @@ const manipulate = () => {
 
     // loop to add the last dates of the previous month
     for (let i = dayone; i > 0; i--) {
-        lit += `<li class="inactive">${monthlastdate - i + 1}</li>`;
+        lit += `<li  class="inactive">${monthlastdate - i + 1}</li>`;
     }
 
     // loop to add the dates of the current month
     for (let i = 1; i <= lastdate; i++) {
         // check if the current date is today
         let isToday = i === date.getDate() && month === new Date().getMonth() && year === new Date().getFullYear() ? "active" : "";
-        lit += `<li class="${isToday}">${i}</li>`;
+        const clickedDate = `${i} ${months[month]} ${year}`;
+        console.log('clickedDate: ', clickedDate);
+        lit += `<li onclick="openCalendarModal('${clickedDate}')" class="${isToday}">${i}</li>`;
     }
 
     // loop to add the first dates of the next month
@@ -299,13 +301,62 @@ prenexIcons.forEach(icon => {
         manipulate();
     });
 });
+
+
 // // CalendarMOdal
 
-function openCalendarModal() {
-    const calendarModal = document.getElementById('calendarModal')
-    calendarModal.style.display = 'block'
-}
+const selectedDate = document.getElementById("selectedDate")
+
+function openCalendarModal(dayNumber) {
+    console.log('dayNumber...', dayNumber);
+    selectedDate.innerText = dayNumber
+    let calendarModal = document.getElementById('calendarModal')
+    calendarModal.style.display = 'flex'
+};
 function closeCalendarModal() {
-    const calendarModal = document.getElementById('calendarModal')
+    let calendarModal = document.getElementById('calendarModal')
     calendarModal.style.display = 'none'
+
+};
+
+// textarea click text remover
+
+function addEvents(id) {
+    var field = document.getElementById(id);
+    field.onfocus = function () {
+        if (this.value == "Please enter the detail of your event!") {
+            this.value = "";
+        }
+    };
+    field.onblur = function () {
+        if (this.value == "") {
+            this.value = "Please enter the detail of your event!";
+        }
+    };
 }
+addEvents("event-detail");
+
+
+
+
+
+
+
+// const age = prompt("Enter your age");
+// if (age <= 5) {
+//     console.log("You are a child");
+// }
+
+
+// if (age <= 10) {
+//     console.log("you need to pay $10")
+// }
+// else if (age <= 65) { console.log("YOu should pay $20") }
+// else { console.log("you should pay 10") }
+
+
+// const userInput = prompt("Enter anything")
+// if (1) {
+//     console.log("TRUTHY!")
+// }
+// else { console.log("FALSY!") }
