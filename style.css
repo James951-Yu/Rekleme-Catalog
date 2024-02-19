@@ -998,6 +998,7 @@ form select {
     right: 10px;
     font-size: 48px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .modal h1 {
@@ -1072,6 +1073,7 @@ table {
     font-family: 'Inter', 'NotoSans';
     border-radius: 10px;
     border: transparent;
+    cursor: pointer;
 }
 
 @media (max-width:1366px) {
@@ -1822,7 +1824,9 @@ table {
     right: 10px;
     font-size: 48px;
     font-weight: 500;
+    cursor: pointer;
 }
+
 
 @media (max-width:1366px) {
 
@@ -1905,7 +1909,8 @@ table {
     max-width: 960px;
     width: 100%;
     background-color: rgba(242, 242, 242, 1);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
 }
 
 .calendar-container .calendar-header {
@@ -1949,6 +1954,7 @@ table {
     font-size: 1.45rem;
     font-family: 'Inter';
     font-size: 30px;
+    line-height: 30px;
 }
 
 .calendar-body {
