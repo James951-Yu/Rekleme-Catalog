@@ -319,23 +319,18 @@ function closeCalendarModal() {
 
 };
 
-// textarea click text remover
 
-function addEvents(id) {
-    var field = document.getElementById(id);
-    field.onfocus = function () {
-        if (this.value == "Please enter the detail of your event!") {
-            this.value = "";
-        }
-    };
-    field.onblur = function () {
-        if (this.value == "") {
-            this.value = "Please enter the detail of your event!";
-        }
-    };
-}
-addEvents("event-detail");
+var eventDetail = document.getElementById("event-recorder")
+eventDetail.addEventListener("submit", function (event) {
+    event.preventDefault()
+    console.log(event.target.value)
+    const formData = new FormData(event.target);
+    console.log(formData)
+    formProps = Object.fromEntries(formData);
+    console.log(formProps)
 
+
+});
 
 
 
