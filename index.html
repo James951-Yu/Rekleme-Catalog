@@ -33,13 +33,13 @@
                 <li><a href="#Search"><i class="fa-solid fa-magnifying-glass"></i></a></li>
             </ul>
             <ul class="nav_part-1">
-                <li class="hideOnMobile"><i class="fa-solid fa-bars"></i></li>
-                <li class="hideOnMobile"><a href="https://rekleme.vercel.app/" id="about-company">About Company</a></li>
+                <li><i class="fa-solid fa-bars"></i></li>
+                <li><a href="https://rekleme.vercel.app/" id="about-company">About Company</a></li>
                 <li id="catalog-page"><a href="https://rekleme-catalog.vercel.app/">Catalog</a></li>
-                <li class="hideOnMobile"><a href="Promotion">Promotion</a></li>
-                <li class="hideOnMobile"><a href="#Service">Services</a></li>
-                <li class="hideOnMobile"><a href="#Contact">Contact</a></li>
-                <li class="hideOnMobile"><a href="#Search"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="Promotion">Promotion</a></li>
+                <li><a href="#Service">Services</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <li><a href="#Search"><i class="fa-solid fa-magnifying-glass"></i></a></li>
             </ul>
 
             <div class="nav_part-2">
@@ -494,7 +494,7 @@
 
         </div>
         <div class="calendar-body">
-            <ul class="calendar-weekdays">
+            <ul id="hideOnMobile" class="calendar-weekdays">
                 <li>Sunday</li>
                 <li>Monday</li>
                 <li>Tuesday</li>
@@ -502,6 +502,15 @@
                 <li>Thursday</li>
                 <li>Friday</li>
                 <li onclick="openCalendarModal()">Saturday</li>
+            </ul>
+            <ul id="hideonBigScreen" class="calendar-weekdays">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
             </ul>
             <ul class="calendar-dates"></ul>
         </div>

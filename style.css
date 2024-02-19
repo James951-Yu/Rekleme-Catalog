@@ -591,7 +591,8 @@ form select {
 .view-color_selector {
     display: flex;
     flex-direction: column;
-    gap: 15px
+    gap: 15px;
+    /* flex-wrap: wrap; */
 }
 
 .collapsible {
@@ -868,7 +869,7 @@ form select {
     }
 
     .view-color_selector {
-        flex-direction: row;
+        flex-direction: column;
 
 
     }
@@ -881,7 +882,7 @@ form select {
     }
 
     #select-view {
-        margin-left: 20px;
+
         flex-grow: 1;
     }
 
@@ -1951,7 +1952,7 @@ table {
 }
 
 .calendar-body {
-    padding: 20px;
+    padding: 10px;
 }
 
 .calendar-body ul {
@@ -2014,9 +2015,11 @@ table {
 }
 
 
+/* CalendarModal_popuppp */
+
 
 #calendarModal {
-    display: block;
+    display: none;
     position: fixed;
     left: 0%;
     top: 0%;
@@ -2068,6 +2071,7 @@ table {
     font-weight: 1000;
     font-family: 'Inter';
     color: #aaa;
+    cursor: pointer;
 }
 
 #event-recorder {
@@ -2085,6 +2089,7 @@ table {
     background-image: url(images/background\ image-22.jpg);
     background-position: center;
     background-repeat: no-repeat;
+
     width: 70%;
 }
 
@@ -2099,19 +2104,26 @@ table {
     width: 100%;
     border: transparent;
     background: linear-gradient(rgba(81, 103, 248, 0.667), rgba(123, 106, 106, 0.305), rgb(241, 100, 164), rgba(111, 125, 25, 6));
-
+    transition: all 2s;
 }
 
-/* 
-.event-submit:hover {
 
-    z-index: 4;
+.event-submit:hover {
     border-color: transparent;
     background: linear-grandient(90deg, #fd923f, #00a19d, #0c87b7, #cb49ff, #ff6666, #f9d923);
     animation: glow 12s linear;
-    background-color: #10BB87;
-} */
+    background-color: #10BB87 #0c87b7 #6332c5;
+}
+
+#hideonBigScreen {
+    display: none;
+}
+
 @media (max-width:768px) {
+    #calendarModal {
+        background-position: top;
+    }
+
     .event-center {
         align-self: center;
         width: 80%;
@@ -2119,11 +2131,31 @@ table {
         justify-content: center;
     }
 
-    .closeX {
+    /* .closeX {
         top: 70px;
-    }
+    } */
 }
 
+@media(max-width:430px) {
+    #calendarModal {
+        background-position: center;
+    }
+
+    /* .event-center {
+        margin: auto;
+    } */
+    #event-detail {
+        width: 90%;
+    }
+
+    #hideonBigScreen {
+        display: flex;
+    }
+
+    #hideOnMobile {
+        display: none;
+    }
+}
 
 
 
