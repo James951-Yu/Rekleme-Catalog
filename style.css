@@ -399,6 +399,14 @@ nav .nav_part-2 button:not(#constructor) {
     transition: all 2s;
     margin-bottom: 10px;
     width: 100%;
+    box-shadow: 0 2px 5px 2px rgba(16, 187, 135, 1);
+    transition: all 1s;
+}
+
+.log-input:focus,
+.register-input:focus {
+    outline: none;
+    box-shadow: 0 4px 10px 4px #10BB87;
 }
 
 
@@ -406,7 +414,6 @@ nav .nav_part-2 button:not(#constructor) {
 .log-input:hover,
 .register-input:hover {
     color: #200575;
-    background-color: #c5bbe4;
     border: dashed;
 }
 
@@ -503,10 +510,12 @@ nav .nav_part-2 button:not(#constructor) {
 
 }
 
+
+
 .secondary-register-method:hover {
     background-color: #10BB87;
     color: #e4e1e1;
-    border: wavy;
+
 }
 
 .sign-up {
