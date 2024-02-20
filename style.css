@@ -607,6 +607,31 @@ nav .nav_part-2 button:not(#constructor) {
 
 }
 
+@media (max-width:375px) {
+
+    .log-in_form,
+    .register_form {
+        width: 100%;
+    }
+
+    .register-input {
+        max-width: 150px;
+    }
+
+}
+
+@media (max-width:320px) {
+
+    .log-in_form,
+    .register_form {
+        width: 100%;
+    }
+
+    .register-input {
+        max-width: 130px;
+    }
+
+}
 
 /* Catalog */
 .designing-process {
