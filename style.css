@@ -114,7 +114,7 @@ nav {
     position: sticky;
     top: 0px;
     padding: 10px 0;
-    z-index: 2;
+    z-index: 6;
     display: flex;
     align-items: center;
     max-width: 1200px;
@@ -214,6 +214,7 @@ nav .nav_part-2 button:not(#constructor) {
     }
 
     .sidebar {
+        z-index: 1;
         display: flex;
         flex-direction: column;
         background-color: rgba(16, 187, 135, 1);
@@ -343,6 +344,183 @@ nav .nav_part-2 button:not(#constructor) {
         padding: 70px 20px 0 20px;
     }
 }
+
+
+#registerModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    overflow: auto;
+    background-color: none;
+    display: none;
+    justify-content: center;
+    backdrop-filter: blur(10px) saturate(100%);
+
+
+}
+
+.log-in_form {
+    display: none;
+}
+
+.log-in_form,
+.register_form {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-self: center;
+    background-color: #EFEDDC;
+    padding: 40px;
+    height: 90vh;
+    width: 30%;
+    border-radius: 2%;
+
+
+}
+
+.register_form {
+    display: none;
+}
+
+.log-input,
+.register-input {
+    color: #000;
+    font-size: 22px;
+    font-family: 'Inter';
+    font-weight: 500;
+    line-height: 20px;
+    border-radius: 8px;
+    border: 2px solid rgba(16, 187, 135, 1);
+    padding: 15px 10px;
+    transition: all 2s;
+}
+
+
+
+.log-input:hover,
+.register-input:hover {
+    color: #200575;
+    background-color: #c5bbe4;
+}
+
+.mini-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#checkbox {
+    display: inline-flex;
+    height: 15px;
+    width: 15px;
+    font-size: 22px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 25%;
+}
+
+.log-in_form label,
+.log-in_form a,
+.log-in_form h3,
+.register_form a {
+    font-size: 26px;
+    font-family: 'Inter';
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 15px;
+    line-height: 30px;
+    cursor: pointer;
+    color: #200575;
+}
+
+#log-in-link {
+    align-self: flex-start;
+    margin-right: 0;
+    margin-top: 20px;
+}
+
+#page-break {
+    font-size: 22px;
+    font-family: 'Inter';
+    font-weight: 350;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+#page-break::before {
+    right: 10px;
+    margin-left: -10%;
+}
+
+#page-break::before,
+#page-break::after {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 40%;
+    position: relative;
+    vertical-align: middle;
+    background-color: #00000079;
+
+
+}
+
+#page-break::after {
+    left: 10px;
+    margin-right: -10%;
+}
+
+.register-input {
+    max-width: 250px;
+}
+
+.secondary-register-method {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Inter';
+    font-weight: 450;
+    line-height: 30px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 2s;
+
+}
+
+.secondary-register-method:hover {
+    background-color: #10BB87;
+    color: #e4e1e1;
+}
+
+
+
+@media (max-width:768px) {
+    .log-in_form {
+        width: 70%;
+    }
+
+}
+
+@media (max-width:430px) {
+    .log-in_form {
+        width: 90%;
+    }
+
+}
+
 
 /* Catalog */
 .designing-process {
@@ -984,7 +1162,7 @@ form select {
     width: 100%;
     height: 100%;
 
-    z-index: 1;
+    z-index: 5;
     overflow: auto;
     background-color: #fff;
     padding-top: 50px 0;

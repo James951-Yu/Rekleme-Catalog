@@ -1,4 +1,6 @@
 
+// SideMenu function
+
 function showSidebar() {
     const sidebar = document.querySelector('.sidebar')
     sidebar.style.display = 'flex'
@@ -8,7 +10,38 @@ function hideSidebar() {
     sidebar.style.display = 'none'
 }
 
+// login-registration page opener
 
+function openLoginPage() {
+    const loginPage = document.getElementById("registerModal")
+    loginPage.style.display = 'flex';
+
+    const login = document.getElementsByClassName("log-in_form")[0];
+    login.style.display = 'flex';
+
+}
+
+function hideLoginPage() {
+    const loginPage = document.getElementById("registerModal")
+    loginPage.style.display = 'none';
+}
+
+function openSignUp() {
+    const signUp = document.getElementsByClassName("register_form")[0];
+    signUp.style.display = 'flex';
+
+    const closeLogin = document.getElementsByClassName("log-in_form")[0];
+    closeLogin.style.display = 'none';
+}
+
+function openLogin() {
+    const login = document.getElementsByClassName("log-in_form")[0];
+    login.style.display = 'flex';
+
+    const signUp = document.getElementsByClassName("register_form")[0];
+    signUp.style.display = 'none';
+
+}
 
 
 
@@ -312,6 +345,7 @@ function openCalendarModal(dayNumber) {
     selectedDate.innerText = dayNumber
     let calendarModal = document.getElementById('calendarModal')
     calendarModal.style.display = 'flex'
+    highlightDay(dayNumber)
 };
 function closeCalendarModal() {
     let calendarModal = document.getElementById('calendarModal')
@@ -329,9 +363,14 @@ eventDetail.addEventListener("submit", function (event) {
     formProps = Object.fromEntries(formData);
     console.log(formProps)
 
-
+    highlightDay(formProps)
 });
-
+function highlightDay(dayNumber, formProps) {
+    console.log('hello world')
+    let highlightDay = document.querySelector('i')
+    highlightDay.style.color = 'red'
+}
+console.log('highlightDay');
 
 
 
