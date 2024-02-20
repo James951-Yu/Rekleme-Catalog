@@ -574,22 +574,29 @@ nav .nav_part-2 button:not(#constructor) {
     .log-in_form,
     .register_form {
         width: 90%;
-        padding: 20px 10px;
+        padding: 10px 10px;
+    }
+
+    .log-input,
+    .register-input {
+        font-size: 14px;
+        max-width: 175px;
     }
 
     .log-in_form label,
     .log-in_form a,
     .log-in_form h3,
     .register_form a {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .secondary-register-method {
-        font-size: 16px;
+        font-size: 14px;
+        align-items: center;
     }
 
     #page-break {
-        font-size: 15px;
+        font-size: 13px;
     }
 
 
