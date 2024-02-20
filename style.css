@@ -358,8 +358,11 @@ nav .nav_part-2 button:not(#constructor) {
     display: none;
     justify-content: center;
     backdrop-filter: blur(10px) saturate(100%);
+}
 
-
+.log-in,
+.registration {
+    gap: 15px;
 }
 
 .log-in_form {
@@ -372,9 +375,9 @@ nav .nav_part-2 button:not(#constructor) {
     justify-content: space-evenly;
     align-self: center;
     background-color: #EFEDDC;
-    padding: 40px;
-    height: 90vh;
-    width: 30%;
+    padding: 10px 30px 30px 30px;
+    height: 95vh;
+    width: 40%;
     border-radius: 2%;
 
 
@@ -387,14 +390,15 @@ nav .nav_part-2 button:not(#constructor) {
 .log-input,
 .register-input {
     color: #000;
-    font-size: 22px;
+    font-size: 20px;
     font-family: 'Inter';
     font-weight: 500;
-    line-height: 20px;
     border-radius: 8px;
     border: 2px solid rgba(16, 187, 135, 1);
-    padding: 15px 10px;
+    padding: 5px 10px;
     transition: all 2s;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 
@@ -403,6 +407,7 @@ nav .nav_part-2 button:not(#constructor) {
 .register-input:hover {
     color: #200575;
     background-color: #c5bbe4;
+    border: dashed;
 }
 
 .mini-container {
@@ -427,7 +432,7 @@ nav .nav_part-2 button:not(#constructor) {
 .log-in_form a,
 .log-in_form h3,
 .register_form a {
-    font-size: 26px;
+    font-size: 22px;
     font-family: 'Inter';
     font-weight: 500;
     text-decoration: none;
@@ -477,7 +482,7 @@ nav .nav_part-2 button:not(#constructor) {
 }
 
 .register-input {
-    max-width: 250px;
+    max-width: 230px;
 }
 
 .secondary-register-method {
@@ -485,16 +490,14 @@ nav .nav_part-2 button:not(#constructor) {
     display: inline-flex;
     justify-content: center;
     gap: 10px;
-    padding: 10px;
-    align-items: center;
+    padding: 5px;
     text-align: center;
-    font-size: 26px;
+    font-size: 22px;
     font-family: 'Inter';
-    font-weight: 450;
-    line-height: 30px;
+    font-weight: 400;
     border-radius: 25px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     cursor: pointer;
     transition: all 2s;
 
@@ -505,6 +508,23 @@ nav .nav_part-2 button:not(#constructor) {
     color: #e4e1e1;
 }
 
+@media (max-width:1440px) {
+
+    .log-in_form label,
+    .log-in_form a,
+    .log-in_form h3,
+    .register_form a {
+        font-size: 22px;
+    }
+
+    .secondary-register-method {
+        font-size: 22px;
+    }
+
+    #page-break {
+        font-size: 18px;
+    }
+}
 
 
 @media (max-width:768px) {
@@ -2248,9 +2268,9 @@ table {
 
 .closeX {
     position: absolute;
-    top: 30px;
+    top: 10px;
     right: 30px;
-    font-size: 70px;
+    font-size: 50px;
     font-weight: 1000;
     font-family: 'Inter';
     color: #aaa;
