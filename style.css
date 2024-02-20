@@ -580,7 +580,11 @@ nav .nav_part-2 button:not(#constructor) {
     .log-input,
     .register-input {
         font-size: 14px;
-        max-width: 175px;
+
+    }
+
+    .register-input {
+        max-width: 170px;
     }
 
     .log-in_form label,
