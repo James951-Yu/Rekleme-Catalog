@@ -399,7 +399,7 @@ nav .nav_part-2 button:not(#constructor) {
     transition: all 2s;
     margin-bottom: 10px;
     width: 100%;
-    box-shadow: 0 2px 5px 2px rgba(16, 187, 135, 1);
+    box-shadow: 0 1px 3px 1px rgba(16, 187, 135, 1);
     transition: all 1s;
 }
 
