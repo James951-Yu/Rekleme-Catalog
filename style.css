@@ -552,7 +552,7 @@ nav .nav_part-2 button:not(#constructor) {
     .log-in_form,
     .register_form {
         width: 70%;
-        overflow-y: scroll;
+        overflow-y: hidden scroll;
     }
 
     .log-in,
@@ -564,6 +564,9 @@ nav .nav_part-2 button:not(#constructor) {
         max-width: 100%;
     }
 
+    .registering {
+        max-width: 150px;
+    }
 }
 
 @media (max-width:430px) {
