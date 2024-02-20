@@ -42,6 +42,49 @@ function openLogin() {
     signUp.style.display = 'none';
 
 }
+// login form with values
+
+let loginPanel = document.getElementById("loginPage")
+loginPanel.addEventListener('submit', function (event) {
+    event.preventDefault()
+    console.log(event.target.value)
+    const formData = new FormData(event.target);
+    console.log(formData)
+    const formProps = Object.fromEntries(formData);
+    console.log(formProps)
+});
+
+
+
+
+// Registration form with  characteristics
+
+var registerPanel = document.getElementById("registrationForm")
+registerPanel.addEventListener("submit", function (event) {
+    event.preventDefault()
+    console.log(event.target.value)
+    const formData = new FormData(event.target);
+    console.log(formData)
+    formProps = Object.fromEntries(formData);
+    console.log(formProps)
+});
+
+// Email function
+
+// password with same characteristics
+
+
+document.getElementById("registrationForm").addEventListener('submit', function (event) {
+    const password1 = document.getElementById('password1').value;
+    const password2 = document.getElementById('password2').value;
+    const passwordMatchError = document.getElementById('passwordMatchError');
+    if (password1 !== password2) {
+        passwordMatchError.style.display = 'block';
+        event.preventDefault(); // Prevent form submission
+    } else {
+        passwordMatchError.style.display = 'none';
+    }
+})
 
 
 
