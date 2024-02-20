@@ -376,7 +376,7 @@ nav .nav_part-2 button:not(#constructor) {
     align-self: center;
     background-color: #EFEDDC;
     padding: 10px 30px 30px 30px;
-    height: 95vh;
+    height: 95%;
     width: 40%;
     border-radius: 2%;
 
@@ -437,7 +437,6 @@ nav .nav_part-2 button:not(#constructor) {
     font-weight: 500;
     text-decoration: none;
     margin-bottom: 15px;
-    line-height: 30px;
     cursor: pointer;
     color: #200575;
 }
@@ -495,17 +494,19 @@ nav .nav_part-2 button:not(#constructor) {
     font-size: 22px;
     font-family: 'Inter';
     font-weight: 400;
+    border: solid;
     border-radius: 25px;
     margin-bottom: 5px;
     margin-top: 5px;
     cursor: pointer;
-    transition: all 2s;
+    transition: all 1s;
 
 }
 
 .secondary-register-method:hover {
     background-color: #10BB87;
     color: #e4e1e1;
+    border: wavy;
 }
 
 @media (max-width:1440px) {
@@ -526,18 +527,69 @@ nav .nav_part-2 button:not(#constructor) {
     }
 }
 
+@media (max-width:1024px) {
+
+    .log-in_form label,
+    .log-in_form a,
+    .log-in_form h3,
+    .register_form a {
+        font-size: 18px;
+    }
+
+    .secondary-register-method {
+        font-size: 18px;
+    }
+
+    #page-break {
+        font-size: 16px;
+    }
+}
+
+
 
 @media (max-width:768px) {
-    .log-in_form {
+
+    .log-in_form,
+    .register_form {
         width: 70%;
+        overflow-y: scroll;
+    }
+
+    .log-in,
+    .registration {
+        gap: 0px;
+    }
+
+    .register-input {
+        max-width: 100%;
     }
 
 }
 
 @media (max-width:430px) {
-    .log-in_form {
+
+    .log-in_form,
+    .register_form {
         width: 90%;
+        padding: 20px 10px;
     }
+
+    .log-in_form label,
+    .log-in_form a,
+    .log-in_form h3,
+    .register_form a {
+        font-size: 16px;
+    }
+
+    .secondary-register-method {
+        font-size: 16px;
+    }
+
+    #page-break {
+        font-size: 15px;
+    }
+
+
 
 }
 
