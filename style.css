@@ -297,11 +297,12 @@ nav .nav_part-2 button:not(#constructor) {
 
 }
 
+/* Breadcrumb */
 .breadcrumb {
     padding: 30px 83px;
 }
 
-.breadcrumb ul {
+.breadcrumb-ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -309,7 +310,7 @@ nav .nav_part-2 button:not(#constructor) {
     padding: 0;
 }
 
-.breadcrumb li:not(:nth-child(2)):after {
+.breadcrumb-ul li:not(:nth-child(2)):after {
     display: inline-block;
     margin: 0 .25rem;
     content: "/";
@@ -344,6 +345,122 @@ nav .nav_part-2 button:not(#constructor) {
         padding: 70px 20px 0 20px;
     }
 }
+
+/* Search bar */
+#search-bar-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 11vh;
+    width: 50%;
+    margin: auto;
+    background-color: #a39d9d;
+    border-radius: 30px;
+    border: 3px solid;
+
+
+}
+
+.search-bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 50px;
+    background-color: #fff;
+    z-index: 2;
+    width: 100%;
+    /* height: 99%; */
+}
+
+.dropdown {
+    position: relative;
+    width: 32%;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    background-color: #cb49ff;
+    cursor: pointer;
+}
+
+.dropdown-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Inter';
+    color: #FFF;
+    padding: 17px 20px;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    border-radius: 15px;
+
+    max-height: 0px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: max-height 0.5s;
+}
+
+#list.show {
+    width: 100%;
+    max-height: 300px;
+    border: 0.5px dotted;
+
+}
+
+.dropdown-list-item {
+    font-size: 15px;
+    font-family: 'Inter';
+    list-style: none;
+    font-weight: 500;
+    padding: 15px 0 15px 15px;
+    cursor: pointer;
+    transition: margin-left 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-list-item:hover {
+    margin-left: 7.5px;
+    color: purple;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    width: 68%;
+    color: purple;
+}
+
+.search-box input {
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Inter';
+    color: purple;
+    outline: 0;
+    border: 0;
+}
+
+.search-box i {
+    font-size: 26px;
+    cursor: pointer;
+    padding: 15px 14px 15px 15px;
+
+}
+
+.search-box input::placeholder {
+    font-size: 18px;
+    font-weight: 500;
+    color: purple;
+    font-family: 'Inter';
+}
+
+
+/* login-registration popup */
 
 
 #registerModal {

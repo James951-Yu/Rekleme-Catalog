@@ -10,6 +10,57 @@ function hideSidebar() {
     sidebar.style.display = 'none'
 }
 
+
+// search bar 
+
+let dropdownBtn = document.getElementById("drop-text");
+let list = document.getElementById("list");
+let icontwo = document.getElementById("icon");
+let span = document.getElementById("span");
+let input = document.getElementById("search-input");
+let listItems = document.querySelectorAll(".dropdown-list-item");
+
+
+//show dropdown list on click on dropdown btn
+dropdownBtn.onclick = function () {
+    //rotate arrow icon
+    if (list.classList.contains("show")) {
+        icontwo.style.rotate = "0deg";
+    }
+    else { icontwo.style.rotate = "-180deg" }
+    list.classList.toggle('show');
+};
+//hide dropdown list when clicked outside dropdown btn
+window.onclick = function (e) {
+    if (
+        e.target.id !== "drop-text" &&
+        e.target.id !== "span" &&
+        e.target.id !== "icon"
+    ) {
+        list.classList.remove('show');
+
+        icontwo.style.rotate = "0deg";
+    }
+};
+
+for (item of listItems) {
+    // change  dropdownBtn text on click on selected listitems
+    item.onclick = function (e) {
+        span.innerText = e.target.innerText;
+
+        //change input placeholder text onselected item
+        if (e.target.innerText == "Everything") {
+            input.placeholder = "Search Anything..."
+        } else {
+            input.placeholder = "Search in " + e.target.innerText + "..."
+
+        }
+    };
+}
+
+
+
+
 // login-registration page opener
 
 function openLoginPage() {
@@ -258,7 +309,7 @@ let contactForm = document.getElementById('contactForm').addEventListener('submi
     console.log(formProps)
     sendEmail(formProps)
 
-})
+});
 function sendEmail(props) {
     Email.send({
         Host: "smtp.elasticemail.com",
