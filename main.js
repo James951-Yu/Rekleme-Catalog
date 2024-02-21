@@ -12,6 +12,17 @@ function hideSidebar() {
 
 
 // search bar 
+function openSearchBar() {
+    const searchBar = document.getElementById("search-bar-back")
+    searchBar.style.display = 'flex';
+}
+// Function to close the search bar when clicking outside of it
+window.onclick = function (event) {
+    if (event.target !== searchBar) {
+        searchBar.style.display = 'none';
+    }
+};
+
 
 let dropdownBtn = document.getElementById("drop-text");
 let list = document.getElementById("list");
