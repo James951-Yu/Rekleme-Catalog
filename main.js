@@ -17,13 +17,13 @@ function openSearchBar() {
     searchBar.style.display = 'flex';
 }
 // Function to close the search bar when clicking outside of it
-window.onclick = function (event) {
-    if (event.target !== searchBar) {
+window.onclick = function (e) {
+    if (e.target !== searchBar) {
         searchBar.style.display = 'none';
     }
 };
 
-
+let searchBar = document.getElementById("search-bar-back")
 let dropdownBtn = document.getElementById("drop-text");
 let list = document.getElementById("list");
 let icontwo = document.getElementById("icon");
@@ -31,6 +31,17 @@ let span = document.getElementById("span");
 let input = document.getElementById("search-input");
 let listItems = document.querySelectorAll(".dropdown-list-item");
 
+
+// search bar 
+function openSearchBar() {
+    searchBar.style.display = 'flex';
+}
+// Function to close the search bar when clicking outside of it
+window.onclick = function (e) {
+    if (e.target !== searchBar) {
+        searchBar.style.display = 'none';
+    }
+};
 
 //show dropdown list on click on dropdown btn
 dropdownBtn.onclick = function () {
