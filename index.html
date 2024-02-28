@@ -75,6 +75,9 @@
     </div>
 
     <section id="search-bar-back">
+
+        <span onclick="hideSearchBar()" id="searchbar-closer">×</span>
+
         <div class="search-bar">
 
             <!-- Dropdown start -->
@@ -85,9 +88,11 @@
                 </div>
                 <ul id="list" class="dropdown-list">
                     <li class="dropdown-list-item">Everything</li>
-                    <li class="dropdown-list-item">Videos</li>
+                    <li class="dropdown-list-item">Catalogs</li>
                     <li class="dropdown-list-item">Community</li>
-                    <li class="dropdown-list-item">Shorts</li>
+                    <li class="dropdown-list-item">Services</li>
+                    <li class="dropdown-list-item">Videos</li>
+
                 </ul>
 
             </div>
@@ -100,7 +105,9 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
         </div>
+
     </section>
+    <!-- <div id="overlay"></div> -->
     <div id="registerModal">
         <span onclick="hideLoginPage()" class="closeX">&times;</span>
 
@@ -289,6 +296,9 @@
                 <p class="product volume">2,786 pcs in stock</p>
             </div>
 
+
+
+
             <form action="Product-design" id="form" method="post">
                 <div class="view-color_selector">
                     <label for="color"></label>
@@ -321,7 +331,7 @@
                         </option>
                     </select>
                 </div>
-                <button onclick="myFunc" type="" value="default" class="collapsible" id="collapse"
+                <button onclick="myFunc()" type="" value="default" class="collapsible" id="collapse"
                     placeholder="Application method" name="method" require>Application method</button>
 
                 <div class="content">
@@ -678,8 +688,8 @@
             </div>
             <form action="Event-recorder" method="post" id="event-recorder">
                 <textarea name="event" id="event-detail" cols="30" rows="10" placeholder="Enter your message here">
-</textarea>
-                <button onclick="closeCalendarModal()" class="event-submit">Submit</button>
+                </textarea>
+                <button type="submit" onclick="closeCalendarModal()" class="event-submit">Submit</button>
             </form>
 
         </div>
