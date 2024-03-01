@@ -161,7 +161,7 @@ registerPanel.addEventListener("submit", function (event) {
     console.log(formProps)
 });
 
-// Email function
+
 
 // password with same characteristics
 
@@ -420,7 +420,10 @@ const manipulate = () => {
         let isToday = i === date.getDate() && month === new Date().getMonth() && year === new Date().getFullYear() ? "active" : "";
         const clickedDate = `${i}-${months[month]}-${year}`;
         console.log('clickedDate: ', clickedDate);
-        lit += `<li onclick="openCalendarModal('${clickedDate}')" id="${clickedDate}" class="${isToday}">${i}</li>`;
+
+        var dateData = localStorage.getItem(clickedDate)
+        console.log(dateData)
+        lit += `<li onclick="openCalendarModal('${clickedDate}')" id="${clickedDate}" class="${isToday, dateData ? 'bg-red' : ''}  ">${i}</li>`;
     }
 
     // loop to add the first dates of the next month
@@ -478,17 +481,25 @@ function openCalendarModal(selectedEventDate) {
     selectedDateid = selectedEventDate;
     selectedDate.innerText = selectedEventDate
     let calendarModal = document.getElementById('calendarModal')
-    calendarModal.style.display = 'flex';
-};
-
-function closeCalendarModal() {
+    let eventNote = localStorage.getItem(selectedEventDate)
+    let savedNote = JSON.parse(eventNote)
     let eventTextArea = document.getElementById("event-detail")
-    let calendarModal = document.getElementById('calendarModal')
+
+    if (eventNote) {
+        document.getElementById("saved-note").innerHTML = savedNote.event
+
+    }
+    else {
+        document.getElementById("saved-note").innerHTML = ''
+
+    }
     eventTextArea.value = ''
-    calendarModal.style.display = 'none'
+    calendarModal.style.display = 'flex'
 };
 
 
+
+// getting the value from the textarea form 
 
 var eventDetail = document.getElementById("event-recorder")
 eventDetail.addEventListener("submit", function (event) {
@@ -496,23 +507,47 @@ eventDetail.addEventListener("submit", function (event) {
     console.log(event.target.value)
     const formData = new FormData(event.target);
     console.log(formData)
-    formProps = Object.fromEntries(formData);
+    const formProps = Object.fromEntries(formData);
     console.log(formProps)
     const clickedDateEl = document.getElementById(selectedDateid);
-    clickedDateEl.style.background = 'red'
+    clickedDateEl.style.background = 'red';
+
+
+    let formProps_serialized = JSON.stringify(formProps)
+    localStorage.setItem(selectedDateid, formProps_serialized);
+
+    let formProps_deserialized = JSON.parse(localStorage.getItem("formProps"));
+
+    console.log(formProps_deserialized);
+
 });
 
 
 
 
 
-// var elements = document.querySelectorAll(".calendar-dates li:not(.active):hover::before");
-// elements.addEventListener('click',)
+function closeCalendarModal() {
+    let calendarModal = document.getElementById('calendarModal')
 
-// dateClick: function (manipulate) {
-//     $(".event-day").removeClass("day-highlight");
-//     $(this).addClass("day-highlight");
-// }
+
+    calendarModal.style.display = 'none'
+};
+
+
+// function closeCalendarModal() {
+//     let calendarModal = document.getElementById('calendarModal')
+//     let eventTextArea = document.getElementById("event-detail")
+//     if (eventTextArea === '')
+//         eventTextArea.value = '';
+//     else { eventTextArea.value}
+//     calendarModal.style.display = 'none'
+// };
+
+
+
+
+
+
 
 
 // const age = prompt("Enter your age");

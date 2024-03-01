@@ -680,15 +680,17 @@
     <section id="calendarModal">
         <div class="event-center">
             <span onclick="closeCalendarModal()" class="closeX">&times;</span>
-            <div>
+            <div class="saved-event">
                 <h1>Events</h1>
 
                 <p id="selectedDate">
                 </p>
+
+                <p id="saved-note"></p>
             </div>
             <form action="Event-recorder" method="post" id="event-recorder">
-                <textarea name="event" id="event-detail" cols="30" rows="10" placeholder="Enter your message here">
-                </textarea>
+                <textarea name="event" id="event-detail" cols="30" rows="10"
+                    placeholder="Enter your message here"></textarea>
                 <button type="submit" onclick="closeCalendarModal()" class="event-submit">Submit</button>
             </form>
 
