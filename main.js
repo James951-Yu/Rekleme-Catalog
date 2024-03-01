@@ -11,17 +11,8 @@ function hideSidebar() {
 }
 
 
-// search bar 
-function openSearchBar() {
-    const searchBar = document.getElementById("search-bar-back")
-    searchBar.style.display = 'flex';
-}
-// Function to close the search bar when clicking outside of it
-window.onclick = function (e) {
-    if (e.target !== searchBar) {
-        searchBar.style.display = 'none';
-    }
-};
+
+// Search bar Functions
 
 let searchBar = document.getElementById("search-bar-back")
 let dropdownBtn = document.getElementById("drop-text");
@@ -30,21 +21,37 @@ let icontwo = document.getElementById("icon");
 let span = document.getElementById("span");
 let input = document.getElementById("search-input");
 let listItems = document.querySelectorAll(".dropdown-list-item");
+let overlay = document.getElementById("overlay");
 
 
 // search bar 
 function openSearchBar() {
     searchBar.style.display = 'flex';
 }
-// Function to close the search bar when clicking outside of it
-window.onclick = function (e) {
-    if (e.target !== searchBar) {
-        searchBar.style.display = 'none';
-    }
-};
+
+// overlay.addEventListener('click', function () {
+//     if (searchBar.style.display === 'flex') {
+//         hideSearchBar(); // Call hideSearchBar function if search bar is visible
+//     }
+// });
+// document.body.addEventListener('click', function (event) {
+
+//     if (!event.target.closest('#search-bar-back')) {
+//         if (searchBar.style.display === 'flex') {
+//             searchBar.style.display = 'none';
+//         }
+//     }
+// });
+
+
+function hideSearchBar() {
+    searchBar.style.display = 'none'
+}
+
 
 //show dropdown list on click on dropdown btn
 dropdownBtn.onclick = function () {
+
     //rotate arrow icon
     if (list.classList.contains("show")) {
         icontwo.style.rotate = "0deg";
@@ -54,6 +61,16 @@ dropdownBtn.onclick = function () {
 };
 //hide dropdown list when clicked outside dropdown btn
 window.onclick = function (e) {
+    let searchBar = document.getElementById("search-bar-back")
+    let hideSearchBar = document.querySelector("searchbar-closer")
+    // console.log(e.target, searchBar)
+    if (e.target !== searchBar &&
+        searchBar.style.display === 'flex' &&
+        e.target === "search-bar-back"
+
+    ) {
+        searchBar.style.display === 'none'
+    };
     if (
         e.target.id !== "drop-text" &&
         e.target.id !== "span" &&
@@ -63,6 +80,8 @@ window.onclick = function (e) {
 
         icontwo.style.rotate = "0deg";
     }
+
+
 };
 
 for (item of listItems) {
@@ -142,7 +161,7 @@ registerPanel.addEventListener("submit", function (event) {
     console.log(formProps)
 });
 
-// Email function
+
 
 // password with same characteristics
 
@@ -160,6 +179,8 @@ document.getElementById("registrationForm").addEventListener('submit', function 
 })
 
 
+
+// Application collapliblee
 
 
 
@@ -302,11 +323,6 @@ function hideModal() {
 }
 
 
-
-
-
-
-
 // Call-Center-concerns-Popup
 
 function submitBtn() {
@@ -337,8 +353,6 @@ function sendEmail(props) {
         Host: "smtp.elasticemail.com",
         Username: "khondamiryunus@gmail.com",
         Password: "13493AE8782E0CD1D322605987D40AEC25F7",
-        // Fullname: "fullName",
-        // Contact: "telNumber",
         To: "khondamiryunus@gmail.com",
         From: "xondamiry@gmail.com",
         Subject: "Mail from website",
@@ -404,9 +418,12 @@ const manipulate = () => {
     for (let i = 1; i <= lastdate; i++) {
         // check if the current date is today
         let isToday = i === date.getDate() && month === new Date().getMonth() && year === new Date().getFullYear() ? "active" : "";
-        const clickedDate = `${i} ${months[month]} ${year}`;
+        const clickedDate = `${i}-${months[month]}-${year}`;
         console.log('clickedDate: ', clickedDate);
-        lit += `<li onclick="openCalendarModal('${clickedDate}')" class="${isToday}">${i}</li>`;
+
+        var dateData = localStorage.getItem(clickedDate)
+        console.log(dateData)
+        lit += `<li onclick="openCalendarModal('${clickedDate}')" id="${clickedDate}" class="${isToday, dateData ? 'bg-red' : ''}  ">${i}</li>`;
     }
 
     // loop to add the first dates of the next month
@@ -449,26 +466,40 @@ prenexIcons.forEach(icon => {
         // Call the manipulate function to update the calendar display
         manipulate();
     });
+
 });
 
 
+
+
+
 // // CalendarMOdal
+var selectedDateid;
+let selectedDate = document.getElementById("selectedDate")
 
-const selectedDate = document.getElementById("selectedDate")
-
-function openCalendarModal(dayNumber) {
-    console.log('dayNumber...', dayNumber);
-    selectedDate.innerText = dayNumber
+function openCalendarModal(selectedEventDate) {
+    selectedDateid = selectedEventDate;
+    selectedDate.innerText = selectedEventDate
     let calendarModal = document.getElementById('calendarModal')
+    let eventNote = localStorage.getItem(selectedEventDate)
+    let savedNote = JSON.parse(eventNote)
+    let eventTextArea = document.getElementById("event-detail")
+
+    if (eventNote) {
+        document.getElementById("saved-note").innerHTML = savedNote.event
+
+    }
+    else {
+        document.getElementById("saved-note").innerHTML = ''
+
+    }
+    eventTextArea.value = ''
     calendarModal.style.display = 'flex'
-    highlightDay(dayNumber)
-};
-function closeCalendarModal() {
-    let calendarModal = document.getElementById('calendarModal')
-    calendarModal.style.display = 'none'
-
 };
 
+
+
+// getting the value from the textarea form 
 
 var eventDetail = document.getElementById("event-recorder")
 eventDetail.addEventListener("submit", function (event) {
@@ -476,17 +507,44 @@ eventDetail.addEventListener("submit", function (event) {
     console.log(event.target.value)
     const formData = new FormData(event.target);
     console.log(formData)
-    formProps = Object.fromEntries(formData);
+    const formProps = Object.fromEntries(formData);
     console.log(formProps)
+    const clickedDateEl = document.getElementById(selectedDateid);
+    clickedDateEl.style.background = 'red';
 
-    highlightDay(formProps)
+
+    let formProps_serialized = JSON.stringify(formProps)
+    localStorage.setItem(selectedDateid, formProps_serialized);
+
+    let formProps_deserialized = JSON.parse(localStorage.getItem("formProps"));
+
+    console.log(formProps_deserialized);
+
 });
-function highlightDay(dayNumber, formProps) {
-    console.log('hello world')
-    let highlightDay = document.querySelector('i')
-    highlightDay.style.color = 'red'
-}
-console.log('highlightDay');
+
+
+
+
+
+function closeCalendarModal() {
+    let calendarModal = document.getElementById('calendarModal')
+
+
+    calendarModal.style.display = 'none'
+};
+
+
+// function closeCalendarModal() {
+//     let calendarModal = document.getElementById('calendarModal')
+//     let eventTextArea = document.getElementById("event-detail")
+//     if (eventTextArea === '')
+//         eventTextArea.value = '';
+//     else { eventTextArea.value}
+//     calendarModal.style.display = 'none'
+// };
+
+
+
 
 
 
